@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/navigation_home"
+        android:icon="@drawable/ic_menu_search_clicked"
+        android:enabled="true"
+        android:title="검색" />
+
+    <item
+        android:id="@+id/navigation_study"
+        android:icon="@drawable/ic_menu_history_clicked"
+        android:enabled="true"
+        android:title="진료내역" />
+
+    <item
+        android:id="@+id/navigation_group"
+        android:enabled="true"
+        android:icon="@drawable/ic_menu_my_page_clicked"
+        android:title="마이페이지" />
+
+</menu>

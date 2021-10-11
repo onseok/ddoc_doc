@@ -10,7 +10,7 @@
         android:id="@+id/mainAnimationGifImageView"
         android:layout_width="70dp"
         android:layout_height="70dp"
-        android:layout_marginTop="80dp"
+        android:layout_marginTop="60dp"
         android:adjustViewBounds="true"
         android:background="@color/white"
         android:scaleType="centerCrop"
@@ -113,13 +113,14 @@
         android:background="@color/white"
         android:src="@drawable/ic_pharmacy"
         app:layout_constraintStart_toStartOf="@id/mainDivider"
-        app:layout_constraintTop_toBottomOf="@id/mainDivider" />
+        app:layout_constraintTop_toBottomOf="@id/mainDivider"
+        app:layout_constraintVertical_chainStyle="packed" />
 
     <TextView
         android:id="@+id/findPharmacyTextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="15dp"
         android:fontFamily="@font/ddoc_doc_font"
         android:text="내 주변 약국 찾기"
         android:textColor="@color/black"
@@ -137,6 +138,48 @@
         app:layout_constraintBottom_toBottomOf="@id/mainPharmacyImageView"
         app:layout_constraintStart_toStartOf="@id/findPharmacyTextView"
         app:layout_constraintTop_toBottomOf="@id/findPharmacyTextView" />
+
+    <androidx.appcompat.widget.AppCompatImageButton
+        android:id="@+id/rightButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:backgroundTint="@color/transparent"
+        android:src="@drawable/ic_right_button"
+        app:layout_constraintBottom_toBottomOf="@id/findPharmacySubTextView"
+        app:layout_constraintEnd_toEndOf="@id/mainDivider"
+        app:layout_constraintTop_toTopOf="@id/findPharmacyTextView" />
+
+    <com.wonseok.ddoc_doc.utility.NestedScrollableHost
+        android:id="@+id/mainNestedScrollableHost"
+        android:layout_width="match_parent"
+        android:layout_height="120dp"
+        android:layout_marginTop="25dp"
+        android:layout_marginBottom="10dp"
+        app:layout_constraintBottom_toTopOf="@id/mainBottomNavigationView"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/mainPharmacyImageView">
+
+        <androidx.viewpager2.widget.ViewPager2
+            android:id="@+id/mainBannerViewPager"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+    </com.wonseok.ddoc_doc.utility.NestedScrollableHost>
+
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/mainBottomNavigationView"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="0dp"
+        android:layout_marginEnd="0dp"
+        android:background="?android:attr/windowBackground"
+        app:itemIconTint="@drawable/menu_selector_color"
+        app:itemTextColor="@drawable/menu_selector_color"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:menu="@menu/bottom_nav_menu" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
