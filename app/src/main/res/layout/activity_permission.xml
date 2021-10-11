@@ -1,0 +1,264 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".PermissionActivity">
+
+    <TextView
+        android:id="@+id/permissionNoticeTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="40dp"
+        android:text="똑닥 앱 이용을 위한 권한 안내"
+        android:textColor="@color/black"
+        android:textSize="18sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <View
+        android:id="@+id/permissionDivider"
+        android:layout_width="0dp"
+        android:layout_height="1dp"
+        android:layout_marginTop="15dp"
+        android:background="#C3C3C3"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/permissionNoticeTextView" />
+
+    <TextView
+        android:id="@+id/selectPermissionTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="15dp"
+        android:layout_marginTop="15dp"
+        android:text="선택 접근 권한"
+        android:textColor="@color/black"
+        android:textSize="14sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/permissionDivider" />
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/locationIcon"
+        android:layout_width="wrap_content"
+        android:layout_height="50dp"
+        android:layout_marginTop="20dp"
+        android:src="@drawable/ic_location"
+        app:layout_constraintStart_toStartOf="@id/selectPermissionTextView"
+        app:layout_constraintTop_toBottomOf="@id/selectPermissionTextView" />
+
+    <TextView
+        android:id="@+id/locationTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="15dp"
+        android:text="위치"
+        android:textColor="@color/black"
+        android:textSize="12sp"
+        app:layout_constraintStart_toEndOf="@id/locationIcon"
+        app:layout_constraintTop_toTopOf="@id/locationIcon" />
+
+    <TextView
+        android:id="@+id/locationSubTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="현재 위치 기준 정확한 병원/약국 정보 표시"
+        android:textColor="#C2C2C2"
+        android:textSize="12sp"
+        app:layout_constraintBottom_toBottomOf="@id/locationIcon"
+        app:layout_constraintStart_toStartOf="@id/locationTextView"
+        app:layout_constraintTop_toBottomOf="@id/locationTextView" />
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/cameraIcon"
+        android:layout_width="wrap_content"
+        android:layout_height="55dp"
+        android:layout_marginTop="20dp"
+        android:src="@drawable/ic_camera"
+        app:layout_constraintStart_toStartOf="@id/locationIcon"
+        app:layout_constraintTop_toBottomOf="@id/locationIcon" />
+
+    <TextView
+        android:id="@+id/cameraTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="15dp"
+        android:text="카메라"
+        android:textColor="@color/black"
+        android:textSize="12sp"
+        app:layout_constraintStart_toEndOf="@id/cameraIcon"
+        app:layout_constraintTop_toTopOf="@id/cameraIcon" />
+
+    <TextView
+        android:id="@+id/cameraSubTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="비대면진료(화상) 연결, 사진촬영, 처방전 QR코드 인식을\n통한 등록 기능 제공 "
+        android:textColor="#C2C2C2"
+        android:textSize="12sp"
+        app:layout_constraintBottom_toBottomOf="@id/cameraIcon"
+        app:layout_constraintStart_toStartOf="@id/cameraTextView" />
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/micIcon"
+        android:layout_width="wrap_content"
+        android:layout_height="50dp"
+        android:layout_marginTop="20dp"
+        android:src="@drawable/ic_mic"
+        app:layout_constraintStart_toStartOf="@id/cameraIcon"
+        app:layout_constraintTop_toBottomOf="@id/cameraIcon" />
+
+    <TextView
+        android:id="@+id/micTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="15dp"
+        android:text="마이크"
+        android:textColor="@color/black"
+        android:textSize="12sp"
+        app:layout_constraintStart_toEndOf="@id/micIcon"
+        app:layout_constraintTop_toTopOf="@id/micIcon" />
+
+    <TextView
+        android:id="@+id/micSubTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="비대면진료(화상) 연결 기능 제공"
+        android:textColor="#C2C2C2"
+        android:textSize="12sp"
+        app:layout_constraintBottom_toBottomOf="@id/micIcon"
+        app:layout_constraintStart_toStartOf="@id/micTextView"
+        app:layout_constraintTop_toBottomOf="@id/micTextView" />
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/photoIcon"
+        android:layout_width="wrap_content"
+        android:layout_height="50dp"
+        android:layout_marginTop="20dp"
+        android:src="@drawable/ic_photo"
+        app:layout_constraintStart_toStartOf="@id/micIcon"
+        app:layout_constraintTop_toBottomOf="@id/micIcon" />
+
+    <TextView
+        android:id="@+id/photoTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="15dp"
+        android:text="사진"
+        android:textColor="@color/black"
+        android:textSize="12sp"
+        app:layout_constraintStart_toEndOf="@id/photoIcon"
+        app:layout_constraintTop_toTopOf="@id/photoIcon" />
+
+    <TextView
+        android:id="@+id/photoSubTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="프로필 사진 및 이용후기 사진 등록 기능 제공"
+        android:textColor="#C2C2C2"
+        android:textSize="12sp"
+        app:layout_constraintBottom_toBottomOf="@id/photoIcon"
+        app:layout_constraintStart_toStartOf="@id/photoTextView"
+        app:layout_constraintTop_toBottomOf="@id/photoTextView" />
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/phoneIcon"
+        android:layout_width="wrap_content"
+        android:layout_height="50dp"
+        android:layout_marginTop="20dp"
+        android:src="@drawable/ic_phone"
+        app:layout_constraintStart_toStartOf="@id/photoIcon"
+        app:layout_constraintTop_toBottomOf="@id/photoIcon" />
+
+    <TextView
+        android:id="@+id/phoneTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="15dp"
+        android:text="전화"
+        android:textColor="@color/black"
+        android:textSize="12sp"
+        app:layout_constraintStart_toEndOf="@id/phoneIcon"
+        app:layout_constraintTop_toTopOf="@id/phoneIcon" />
+
+    <TextView
+        android:id="@+id/phoneSubTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="병원/약국 전화번호를 통한 통화 기능 제공"
+        android:textColor="#C2C2C2"
+        android:textSize="12sp"
+        app:layout_constraintBottom_toBottomOf="@id/phoneIcon"
+        app:layout_constraintStart_toStartOf="@id/phoneTextView"
+        app:layout_constraintTop_toBottomOf="@id/phoneTextView" />
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/saveIcon"
+        android:layout_width="wrap_content"
+        android:layout_height="50dp"
+        android:layout_marginTop="20dp"
+        android:src="@drawable/ic_save"
+        app:layout_constraintStart_toStartOf="@id/phoneIcon"
+        app:layout_constraintTop_toBottomOf="@id/phoneIcon" />
+
+    <TextView
+        android:id="@+id/saveTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="15dp"
+        android:text="저장"
+        android:textColor="@color/black"
+        android:textSize="12sp"
+        app:layout_constraintStart_toEndOf="@id/saveIcon"
+        app:layout_constraintTop_toTopOf="@id/saveIcon" />
+
+    <TextView
+        android:id="@+id/saveSubTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="서비스 이용을 위해 필요한 사진 및 파일 저장"
+        android:textColor="#C2C2C2"
+        android:textSize="12sp"
+        app:layout_constraintBottom_toBottomOf="@id/saveIcon"
+        app:layout_constraintStart_toStartOf="@id/saveTextView"
+        app:layout_constraintTop_toBottomOf="@id/saveTextView" />
+
+    <TextView
+        android:id="@+id/detailFirstTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="25dp"
+        android:text="※ 선택적 접근권한은 해당 기능 사용 시 요청하며, 동의하지 않아도 서비스\n    이용 가능"
+        android:textColor="#C2C2C2"
+        android:textSize="12sp"
+        app:layout_constraintStart_toStartOf="@id/saveIcon"
+        app:layout_constraintTop_toBottomOf="@id/saveIcon" />
+
+    <TextView
+        android:id="@+id/detailSecondTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:text="※ 휴대폰 설정 > 애플리케이션(앱) > 똑닥 > 앱 권한 메뉴에서 설정 변경\n    가능"
+        android:textColor="#C2C2C2"
+        android:textSize="12sp"
+        app:layout_constraintStart_toStartOf="@id/saveIcon"
+        app:layout_constraintTop_toBottomOf="@id/detailFirstTextView" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/checkPermissionButton"
+        android:layout_width="0dp"
+        android:layout_height="55dp"
+        android:layout_margin="15dp"
+        android:background="@color/main_color"
+        android:text="확인"
+        android:textColor="@color/black"
+        android:textSize="16sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
