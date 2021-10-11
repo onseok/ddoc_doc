@@ -48,6 +48,7 @@ class SearchFragment : Fragment() {
                     when (state) {
                         // 뷰페이저에서 손 떼었을때 / 뷰페이저 멈춰있을 때
                         ViewPager2.SCROLL_STATE_IDLE -> autoScrollStart(intervalTime)
+
                         // 뷰페이저 움직이는 중
                         ViewPager2.SCROLL_STATE_DRAGGING -> autoScrollStop()
                     }
