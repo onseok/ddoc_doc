@@ -1,14 +1,281 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".fragment.MyPageFragment">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
+    <androidx.appcompat.widget.AppCompatImageButton
+        android:id="@+id/settingsButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="10dp"
+        android:backgroundTint="@color/transparent"
+        android:src="@drawable/ic_settings"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
-</FrameLayout>
+    <androidx.appcompat.widget.AppCompatImageButton
+        android:id="@+id/qrCodeButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:backgroundTint="@color/transparent"
+        android:src="@drawable/ic_qr_code"
+        app:layout_constraintBottom_toBottomOf="@id/settingsButton"
+        app:layout_constraintEnd_toStartOf="@id/settingsButton"
+        app:layout_constraintTop_toTopOf="@id/settingsButton" />
+
+    <TextView
+        android:id="@+id/myPageTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="15dp"
+        android:layout_marginTop="30dp"
+        android:fontFamily="@font/ddoc_doc_font"
+        android:text="마이페이지"
+        android:textColor="@color/black"
+        android:textSize="24sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/settingsButton" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:layout_width="60dp"
+        android:layout_height="30dp"
+        android:layout_marginStart="15dp"
+        android:background="@drawable/login_custom_button"
+        android:backgroundTint="@color/main_color"
+        android:fontFamily="@font/ddoc_doc_font"
+        android:text="로그인"
+        android:textSize="14sp"
+        app:layout_constraintBottom_toBottomOf="@id/myPageTextView"
+        app:layout_constraintStart_toEndOf="@id/myPageTextView"
+        app:layout_constraintTop_toTopOf="@id/myPageTextView" />
+
+    <androidx.appcompat.widget.AppCompatImageButton
+        android:id="@+id/alertImageButton"
+        android:layout_width="90dp"
+        android:layout_height="90dp"
+        android:layout_marginTop="30dp"
+        android:backgroundTint="@color/transparent"
+        android:scaleType="centerCrop"
+        android:src="@drawable/ic_mypage_alert"
+        app:layout_constraintEnd_toStartOf="@id/managementImageButton"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/myPageTextView" />
+
+    <TextView
+        android:id="@+id/alertTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/ddoc_doc_font"
+        android:text="병원알림"
+        android:textSize="13sp"
+        app:layout_constraintEnd_toEndOf="@id/alertImageButton"
+        app:layout_constraintStart_toStartOf="@id/alertImageButton"
+        app:layout_constraintTop_toBottomOf="@id/alertImageButton" />
+
+    <androidx.appcompat.widget.AppCompatImageButton
+        android:id="@+id/managementImageButton"
+        android:layout_width="90dp"
+        android:layout_height="90dp"
+        android:backgroundTint="@color/transparent"
+        android:scaleType="centerCrop"
+        android:src="@drawable/ic_mypage_management"
+        app:layout_constraintEnd_toStartOf="@id/healthImageButton"
+        app:layout_constraintStart_toEndOf="@id/alertImageButton"
+        app:layout_constraintTop_toTopOf="@id/alertImageButton" />
+
+    <TextView
+        android:id="@+id/managementTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/ddoc_doc_font"
+        android:text="가족관리"
+        android:textSize="13sp"
+        app:layout_constraintEnd_toEndOf="@id/managementImageButton"
+        app:layout_constraintStart_toStartOf="@id/managementImageButton"
+        app:layout_constraintTop_toBottomOf="@id/managementImageButton" />
+
+    <androidx.appcompat.widget.AppCompatImageButton
+        android:id="@+id/healthImageButton"
+        android:layout_width="90dp"
+        android:layout_height="90dp"
+        android:backgroundTint="@color/transparent"
+        android:scaleType="centerCrop"
+        android:src="@drawable/ic_mypage_health"
+        app:layout_constraintEnd_toStartOf="@id/likeImageButton"
+        app:layout_constraintStart_toEndOf="@id/managementImageButton"
+        app:layout_constraintTop_toTopOf="@id/managementImageButton" />
+
+    <TextView
+        android:id="@+id/healthTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/ddoc_doc_font"
+        android:text="건강피드"
+        android:textSize="13sp"
+        app:layout_constraintEnd_toEndOf="@id/healthImageButton"
+        app:layout_constraintStart_toStartOf="@id/healthImageButton"
+        app:layout_constraintTop_toBottomOf="@id/healthImageButton" />
+
+    <androidx.appcompat.widget.AppCompatImageButton
+        android:id="@+id/likeImageButton"
+        android:layout_width="90dp"
+        android:layout_height="90dp"
+        android:backgroundTint="@color/transparent"
+        android:scaleType="centerCrop"
+        android:src="@drawable/ic_mypage_like"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/healthImageButton"
+        app:layout_constraintTop_toTopOf="@id/healthImageButton" />
+
+    <TextView
+        android:id="@+id/likeTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/ddoc_doc_font"
+        android:text="찜한목록"
+        android:textSize="13sp"
+        app:layout_constraintEnd_toEndOf="@id/likeImageButton"
+        app:layout_constraintStart_toStartOf="@id/likeImageButton"
+        app:layout_constraintTop_toBottomOf="@id/likeImageButton" />
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/myPageBannerImageView"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="15dp"
+        android:layout_marginEnd="15dp"
+        android:scaleType="fitCenter"
+        android:src="@drawable/mypage_banner"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/likeTextView" />
+
+    <TextView
+        android:id="@+id/ensuranceTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/ddoc_doc_font"
+        android:text="보험청구"
+        android:textSize="12sp"
+        app:layout_constraintStart_toStartOf="@id/myPageBannerImageView"
+        app:layout_constraintTop_toBottomOf="@id/myPageBannerImageView" />
+
+    <TextView
+        android:id="@+id/realEnsuranceTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:fontFamily="@font/ddoc_doc_font"
+        android:text="실손보험 청구"
+        android:textColor="#424242"
+        android:textSize="15sp"
+        app:layout_constraintStart_toStartOf="@id/ensuranceTextView"
+        app:layout_constraintTop_toBottomOf="@id/ensuranceTextView" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/betaButton"
+        android:layout_width="57dp"
+        android:layout_height="32dp"
+        android:layout_marginEnd="10dp"
+        android:backgroundTint="#ff6598"
+        android:fontFamily="@font/ddoc_doc_font"
+        android:text="Beta"
+        android:textColor="@color/white"
+        android:textSize="12sp"
+        app:layout_constraintBottom_toBottomOf="@id/realEnsuranceTextView"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@id/realEnsuranceTextView" />
+
+    <View
+        android:id="@+id/myPageFirstDivider"
+        android:layout_width="0dp"
+        android:layout_height="1dp"
+        android:layout_marginTop="10dp"
+        android:background="@color/gray"
+        app:layout_constraintEnd_toEndOf="@id/betaButton"
+        app:layout_constraintStart_toStartOf="@id/realEnsuranceTextView"
+        app:layout_constraintTop_toBottomOf="@id/betaButton" />
+
+    <TextView
+        android:id="@+id/mobileDocumentsTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:fontFamily="@font/ddoc_doc_font"
+        android:text="모바일 서류보관함"
+        android:textColor="#424242"
+        android:textSize="15sp"
+        app:layout_constraintStart_toStartOf="@id/ensuranceTextView"
+        app:layout_constraintTop_toBottomOf="@id/myPageFirstDivider" />
+
+    <View
+        android:id="@+id/myPageSecondDivider"
+        android:layout_width="0dp"
+        android:layout_height="10dp"
+        android:layout_marginTop="20dp"
+        android:background="#F3F3F3"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/mobileDocumentsTextView" />
+
+    <TextView
+        android:id="@+id/myControlTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="25dp"
+        android:fontFamily="@font/ddoc_doc_font"
+        android:text="나의 관리"
+        android:textSize="12sp"
+        app:layout_constraintStart_toStartOf="@id/mobileDocumentsTextView"
+        app:layout_constraintTop_toBottomOf="@id/myPageSecondDivider" />
+
+    <TextView
+        android:id="@+id/payMethodTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:fontFamily="@font/ddoc_doc_font"
+        android:text="결제수단 관리"
+        android:textColor="#424242"
+        android:textSize="15sp"
+        app:layout_constraintStart_toStartOf="@id/myControlTextView"
+        app:layout_constraintTop_toBottomOf="@id/myControlTextView" />
+
+    <View
+        android:id="@+id/myPageThirdDivider"
+        android:layout_width="0dp"
+        android:layout_height="1dp"
+        android:layout_marginTop="20dp"
+        android:background="@color/gray"
+        app:layout_constraintEnd_toEndOf="@id/betaButton"
+        app:layout_constraintStart_toStartOf="@id/realEnsuranceTextView"
+        app:layout_constraintTop_toBottomOf="@id/payMethodTextView" />
+
+    <TextView
+        android:id="@+id/pillManagementTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:fontFamily="@font/ddoc_doc_font"
+        android:text="복약 관리"
+        android:textColor="#424242"
+        android:textSize="15sp"
+        app:layout_constraintStart_toStartOf="@id/payMethodTextView"
+        app:layout_constraintTop_toBottomOf="@id/myPageThirdDivider" />
+
+    <View
+        android:id="@+id/myPageFourthDivider"
+        android:layout_width="0dp"
+        android:layout_height="10dp"
+        android:layout_marginTop="20dp"
+        android:background="#F3F3F3"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/pillManagementTextView" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

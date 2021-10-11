@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_margin="20dp">
+
+    <TextView
+        android:id="@+id/loginBottomSheetTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="30dp"
+        android:layout_marginTop="90dp"
+        android:fontFamily="@font/ddoc_doc_font"
+        android:text="로그인"
+        android:textColor="@color/black"
+        android:textSize="25sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/signupBottomSheetTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="30dp"
+        android:fontFamily="@font/ddoc_doc_font"
+        android:text="회원가입"
+        android:textSize="13sp"
+        app:layout_constraintBottom_toBottomOf="@id/loginBottomSheetTextView"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@id/loginBottomSheetTextView" />
+    
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:layout_marginBottom="10dp"
+        android:fontFamily="@font/ddoc_doc_font"
+        android:text="이메일"
+        android:textColor="@color/black"
+        android:textSize="13sp"
+        app:layout_constraintBottom_toBottomOf="@id/emailEditTextView"
+        app:layout_constraintStart_toStartOf="@id/emailEditTextView"
+        app:layout_constraintTop_toTopOf="@id/emailEditTextView" />
+
+    <EditText
+        android:id="@+id/emailEditTextView"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="50dp"
+        android:enabled="false"
+        android:fontFamily="@font/ddoc_doc_font"
+        android:hint="이메일 주소 입력"
+        android:paddingStart="90dp"
+        android:paddingBottom="20dp"
+        android:textSize="17sp"
+        app:layout_constraintEnd_toEndOf="@id/signupBottomSheetTextView"
+        app:layout_constraintStart_toStartOf="@id/loginBottomSheetTextView"
+        app:layout_constraintTop_toBottomOf="@id/loginBottomSheetTextView" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:layout_marginBottom="10dp"
+        android:fontFamily="@font/ddoc_doc_font"
+        android:text="비밀번호"
+        android:textColor="@color/black"
+        android:textSize="13sp"
+        app:layout_constraintBottom_toBottomOf="@id/passwordEditTextView"
+        app:layout_constraintStart_toStartOf="@id/passwordEditTextView"
+        app:layout_constraintTop_toTopOf="@id/passwordEditTextView" />
+
+    <EditText
+        android:id="@+id/passwordEditTextView"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="40dp"
+        android:enabled="false"
+        android:fontFamily="@font/ddoc_doc_font"
+        android:hint="비밀번호 입력"
+        android:paddingStart="90dp"
+        android:paddingBottom="20dp"
+        android:textSize="17sp"
+        app:layout_constraintEnd_toEndOf="@id/signupBottomSheetTextView"
+        app:layout_constraintStart_toStartOf="@id/loginBottomSheetTextView"
+        app:layout_constraintTop_toBottomOf="@id/emailEditTextView" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="40dp"
+        android:fontFamily="@font/ddoc_doc_font"
+        android:text="간편하게 SNS 로그인"
+        android:textColor="@color/black"
+        android:textSize="15sp"
+        app:layout_constraintEnd_toEndOf="@id/passwordEditTextView"
+        app:layout_constraintStart_toStartOf="@id/passwordEditTextView"
+        app:layout_constraintTop_toBottomOf="@id/passwordEditTextView" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

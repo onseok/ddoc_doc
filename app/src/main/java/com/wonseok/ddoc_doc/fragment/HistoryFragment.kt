@@ -12,6 +12,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.view.Window
 import android.widget.Button
+import androidx.fragment.app.FragmentManager
 import com.wonseok.ddoc_doc.R
 import com.wonseok.ddoc_doc.databinding.FragmentHistoryBinding
 import com.wonseok.ddoc_doc.databinding.FragmentSearchBinding
@@ -19,6 +20,7 @@ import com.wonseok.ddoc_doc.databinding.FragmentSearchBinding
 class HistoryFragment : Fragment() {
 
     private var binding: FragmentHistoryBinding? = null
+    private val bottomSheet = LoginBottomSheet()
 
     // 뷰가 생성되었을 때 - 프레그먼트와 레이아웃을 연결시켜주는 부분
     override fun onCreateView(
@@ -53,10 +55,11 @@ class HistoryFragment : Fragment() {
         var loginNoButton : Button? = dialog?.findViewById(R.id.loginNoButton)
 
         loginYesButton?.setOnClickListener{
-//            dialog.dismiss()
+            dialog?.dismiss()
+            bottomSheet.show(childFragmentManager, bottomSheet.tag)
         }
         loginNoButton?.setOnClickListener{
-//            dialog.dismiss()
+           dialog?.dismiss()
         }
 
         dialog?.show()
