@@ -2,19 +2,19 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
 
     <item
-        android:id="@+id/navigation_home"
+        android:id="@+id/menu_search"
         android:icon="@drawable/ic_menu_search_clicked"
         android:enabled="true"
         android:title="검색" />
 
     <item
-        android:id="@+id/navigation_study"
+        android:id="@+id/menu_history"
         android:icon="@drawable/ic_menu_history_clicked"
         android:enabled="true"
         android:title="진료내역" />
 
     <item
-        android:id="@+id/navigation_group"
+        android:id="@+id/menu_my_page"
         android:enabled="true"
         android:icon="@drawable/ic_menu_my_page_clicked"
         android:title="마이페이지" />
