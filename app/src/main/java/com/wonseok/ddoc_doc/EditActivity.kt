@@ -7,11 +7,14 @@ import android.graphics.Color
 import android.graphics.drawable.ColorDrawable
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.view.View
 import android.view.Window
 import android.widget.Button
 import android.widget.Toast
+import com.bumptech.glide.Glide
 import com.kakao.sdk.user.UserApiClient
 import com.wonseok.ddoc_doc.databinding.ActivityEditBinding
+import kotlinx.android.synthetic.main.fragment_history.*
 
 class EditActivity : AppCompatActivity() {
 
@@ -31,6 +34,8 @@ class EditActivity : AppCompatActivity() {
         binding.editProfileLogoutImageButton.setOnClickListener {
             logoutDialog()
         }
+
+        updateProfile()
     }
 
     fun logoutDialog() {
@@ -50,7 +55,7 @@ class EditActivity : AppCompatActivity() {
                 if (error != null) {
                     Toast.makeText(this, "로그아웃 실패 $error", Toast.LENGTH_SHORT).show()
                 }else {
-                    Toast.makeText(this, "로그아웃", Toast.LENGTH_SHORT).show()
+                    Toast.makeText(this, "로그아웃 성공", Toast.LENGTH_SHORT).show()
                 }
                 mainActivity.updateMyPageFragmentUI()
             }
@@ -60,5 +65,12 @@ class EditActivity : AppCompatActivity() {
         }
 
         dialog?.show()
+    }
+
+    fun updateProfile() {
+        UserApiClient.instance.me { user, error ->
+            binding.editProfileNickNameDetailTextView.text = "${user?.kakaoAccount?.profile?.nickname}"
+            Glide.with(this).load("${user?.kakaoAccount?.profile?.profileImageUrl}").into(binding.editProfileImageView)
+        }
     }
 }

@@ -77,17 +77,25 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/editProfileFirstDivider" />
 
-    <TextView
-        android:id="@+id/editProfileProfileDetailTextView"
+    <androidx.cardview.widget.CardView
+        android:id="@+id/editProfileCardView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="dnjstjr245@naver.com"
-        android:textSize="17sp"
-        app:layout_constraintBottom_toBottomOf="@id/editProfileProfileTextView"
+        app:cardCornerRadius="55dp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.2"
+        app:layout_constraintHorizontal_bias="0.1"
+        app:layout_constraintBottom_toBottomOf="@id/editProfileProfileTextView"
         app:layout_constraintStart_toEndOf="@id/editProfileProfileTextView"
-        app:layout_constraintTop_toTopOf="@id/editProfileProfileTextView" />
+        app:layout_constraintTop_toTopOf="@id/editProfileProfileTextView">
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/editProfileImageView"
+            android:scaleType="centerCrop"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:src="@drawable/kakao_logo" />
+
+    </androidx.cardview.widget.CardView>
 
     <View
         android:id="@+id/editProfileSecondDivider"
@@ -97,7 +105,7 @@
         android:background="@color/gray"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="@id/editProfileProfileTextView"
-        app:layout_constraintTop_toBottomOf="@id/editProfileProfileDetailTextView" />
+        app:layout_constraintTop_toBottomOf="@id/editProfileProfileTextView" />
 
     <TextView
         android:id="@+id/editProfileNickNameTextView"
@@ -117,13 +125,13 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:fontFamily="@font/ddoc_doc_font"
-        android:text="김원석"
+        android:text="아무개"
         android:textColor="@color/gray"
         android:textSize="17sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="@id/editProfileNickNameTextView"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.2"
+        app:layout_constraintHorizontal_bias="0.15"
         app:layout_constraintStart_toEndOf="@id/editProfileNickNameTextView"
         app:layout_constraintTop_toTopOf="@id/editProfileNickNameTextView" />
 
