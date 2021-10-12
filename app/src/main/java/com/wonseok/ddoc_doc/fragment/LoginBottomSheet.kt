@@ -1,5 +1,6 @@
 package com.wonseok.ddoc_doc.fragment
 
+import android.content.Intent
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -13,7 +14,7 @@ import com.wonseok.ddoc_doc.MainActivity
 import com.wonseok.ddoc_doc.R
 import com.wonseok.ddoc_doc.databinding.LoginBottomSheetDialogBinding
 
-class LoginBottomSheet : BottomSheetDialogFragment() {
+class LoginBottomSheet(val state: Int) : BottomSheetDialogFragment() {
 
     // 바인딩 객체 타입에 ?를 붙여서 null을 허용 해줘야한다. ( onDestroy 될 때 완벽하게 제거를 하기위해 )
     private var mBinding: LoginBottomSheetDialogBinding? = null
@@ -64,7 +65,11 @@ class LoginBottomSheet : BottomSheetDialogFragment() {
                 }
             } else if (token != null) {
                 Toast.makeText(requireActivity(), "로그인에 성공하였습니다.", Toast.LENGTH_SHORT).show()
-                (activity as MainActivity).updateHistoryFragmentUI()
+                when (state) {
+                    1 -> (activity as MainActivity).updateHistoryFragmentUI()
+                    2 -> (activity as MainActivity).updateMyPageFragmentUI()
+                }
+
             }
         }
 

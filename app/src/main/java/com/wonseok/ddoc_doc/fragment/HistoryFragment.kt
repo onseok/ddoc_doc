@@ -20,7 +20,7 @@ import com.wonseok.ddoc_doc.databinding.FragmentSearchBinding
 class HistoryFragment : Fragment() {
 
     private var binding: FragmentHistoryBinding? = null
-    private val bottomSheet = LoginBottomSheet()
+    private val bottomSheet = LoginBottomSheet(1)
 
     // 뷰가 생성되었을 때 - 프레그먼트와 레이아웃을 연결시켜주는 부분
     override fun onCreateView(

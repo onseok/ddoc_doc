@@ -105,7 +105,7 @@ class MainActivity : AppCompatActivity() {
         backPressedTime = System.currentTimeMillis()
     }
 
-    private val onNavigationItemSelectedListener by lazy {
+    val onNavigationItemSelectedListener by lazy {
         binding.mainBottomNavigationView
             .setOnItemSelectedListener {
                 when (it.itemId) {
