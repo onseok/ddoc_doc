@@ -1,5 +1,6 @@
 package com.wonseok.ddoc_doc.fragment
 
+import android.content.Intent
 import android.os.*
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
@@ -8,7 +9,9 @@ import android.view.ViewGroup
 import androidx.annotation.RequiresApi
 import androidx.viewpager2.widget.ViewPager2
 import com.bumptech.glide.Glide
+import com.wonseok.ddoc_doc.EditActivity
 import com.wonseok.ddoc_doc.R
+import com.wonseok.ddoc_doc.SearchActivity
 import com.wonseok.ddoc_doc.adapters.MainViewPagerAdapter
 import com.wonseok.ddoc_doc.databinding.FragmentSearchBinding
 import java.text.SimpleDateFormat
@@ -64,6 +67,11 @@ class SearchFragment : Fragment() {
         binding?.mainBannerViewPager?.setCurrentItem(++currentPosition, true)
 
         setCurrentDate()
+
+        binding?.mainSearchButton?.setOnClickListener {
+            val intent = Intent(activity, SearchActivity::class.java)
+            startActivity(intent)
+        }
 
 
         return binding!!.root

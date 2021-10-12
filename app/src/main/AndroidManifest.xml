@@ -17,6 +17,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Ddoc_doc">
         <activity
+            android:name=".SearchActivity"
+            android:exported="true" />
+        <activity
             android:name=".EditActivity"
             android:exported="true" />
         <activity
