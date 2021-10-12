@@ -33,7 +33,7 @@ class HistoryFragment : Fragment() {
         )
 
 
-        loginDialog()
+//        loginDialog()
 
         return binding!!.root
     }
@@ -43,7 +43,7 @@ class HistoryFragment : Fragment() {
         super.onDestroyView()
     }
 
-    private fun loginDialog() {
+    fun loginDialog() {
         val dialog = context?.let { Dialog(it) }
 
         dialog?.requestWindowFeature(Window.FEATURE_NO_TITLE)   //타이틀바 제거

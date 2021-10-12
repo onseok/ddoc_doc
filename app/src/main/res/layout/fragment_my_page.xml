@@ -37,10 +37,13 @@
         android:text="마이페이지"
         android:textColor="@color/black"
         android:textSize="24sp"
+        android:visibility="gone"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/settingsButton" />
+        app:layout_constraintTop_toBottomOf="@id/settingsButton"
+        tools:visibility="visible" />
 
     <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/myPageLoginTextView"
         android:layout_width="60dp"
         android:layout_height="30dp"
         android:layout_marginStart="15dp"
@@ -49,6 +52,23 @@
         android:fontFamily="@font/ddoc_doc_font"
         android:text="로그인"
         android:textSize="14sp"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="@id/myPageTextView"
+        app:layout_constraintStart_toEndOf="@id/myPageTextView"
+        app:layout_constraintTop_toTopOf="@id/myPageTextView"
+        tools:visibility="visible" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/myPageEditTextView"
+        android:layout_width="60dp"
+        android:layout_height="30dp"
+        android:layout_marginStart="15dp"
+        android:background="@drawable/login_edit_custom_button"
+        android:backgroundTint="@color/light_gray"
+        android:fontFamily="@font/ddoc_doc_font"
+        android:text="수정"
+        android:textSize="14sp"
+        android:visibility="gone"
         app:layout_constraintBottom_toBottomOf="@id/myPageTextView"
         app:layout_constraintStart_toEndOf="@id/myPageTextView"
         app:layout_constraintTop_toTopOf="@id/myPageTextView" />

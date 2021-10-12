@@ -1,18 +1,21 @@
 package com.wonseok.ddoc_doc.fragment
 
-import android.os.Bundle
-import android.os.Handler
-import android.os.Looper
-import android.os.Message
+import android.os.*
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.annotation.RequiresApi
 import androidx.viewpager2.widget.ViewPager2
 import com.bumptech.glide.Glide
 import com.wonseok.ddoc_doc.R
 import com.wonseok.ddoc_doc.adapters.MainViewPagerAdapter
 import com.wonseok.ddoc_doc.databinding.FragmentSearchBinding
+import java.text.SimpleDateFormat
+import java.time.LocalDateTime
+import java.time.format.DateTimeFormatter
+import java.util.*
+import kotlin.collections.ArrayList
 
 class SearchFragment : Fragment() {
 
@@ -25,6 +28,7 @@ class SearchFragment : Fragment() {
 
 
     // 뷰가 생성되었을 때 - 프레그먼트와 레이아웃을 연결시켜주는 부분
+    @RequiresApi(Build.VERSION_CODES.O)
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -59,7 +63,28 @@ class SearchFragment : Fragment() {
 
         binding?.mainBannerViewPager?.setCurrentItem(++currentPosition, true)
 
+        setCurrentDate()
+
+
         return binding!!.root
+    }
+
+    private fun setCurrentDate() {
+
+        // 현재시간을 가져오기
+        val long_now = System.currentTimeMillis()
+
+        // 현재 시간을 Date 타입으로 변환
+        val t_date = Date(long_now)
+
+        // 날짜, 시간을 가져오고 싶은 형태 선언
+        val t_dateFormat = SimpleDateFormat("yy/MM/dd (E)", Locale("ko", "KR"))
+
+        // 현재 시간을 dateFormat 에 선언한 형태의 String 으로 변환
+        val str_date = t_dateFormat.format(t_date)
+
+        binding?.visitDayButton?.text = str_date
+
     }
 
     override fun onDestroyView() {

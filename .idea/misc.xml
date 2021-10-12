@@ -15,6 +15,7 @@
         <entry key="..\:/Users/wonseok/AndroidStudioProjects/ddoc_doc/app/src/main/res/drawable/ic_save.xml" value="0.3764102564102564" />
         <entry key="..\:/Users/wonseok/AndroidStudioProjects/ddoc_doc/app/src/main/res/drawable/ic_search.xml" value="0.3219298245614035" />
         <entry key="..\:/Users/wonseok/AndroidStudioProjects/ddoc_doc/app/src/main/res/drawable/login_custom_button.xml" value="0.3219298245614035" />
+        <entry key="..\:/Users/wonseok/AndroidStudioProjects/ddoc_doc/app/src/main/res/drawable/login_edit_custom_button.xml" value="0.3219298245614035" />
         <entry key="..\:/Users/wonseok/AndroidStudioProjects/ddoc_doc/app/src/main/res/drawable/main_custom_input.xml" value="0.38229166666666664" />
         <entry key="..\:/Users/wonseok/AndroidStudioProjects/ddoc_doc/app/src/main/res/drawable/main_custom_small_button.xml" value="0.38229166666666664" />
         <entry key="..\:/Users/wonseok/AndroidStudioProjects/ddoc_doc/app/src/main/res/drawable/menu_selector_color.xml" value="0.3219298245614035" />
@@ -25,7 +26,7 @@
         <entry key="..\:/Users/wonseok/AndroidStudioProjects/ddoc_doc/app/src/main/res/layout/activity_permission.xml" value="0.33" />
         <entry key="..\:/Users/wonseok/AndroidStudioProjects/ddoc_doc/app/src/main/res/layout/activity_second.xml" value="0.30833333333333335" />
         <entry key="..\:/Users/wonseok/AndroidStudioProjects/ddoc_doc/app/src/main/res/layout/banner_list_item.xml" value="0.30833333333333335" />
-        <entry key="..\:/Users/wonseok/AndroidStudioProjects/ddoc_doc/app/src/main/res/layout/fragment_history.xml" value="0.30833333333333335" />
+        <entry key="..\:/Users/wonseok/AndroidStudioProjects/ddoc_doc/app/src/main/res/layout/fragment_history.xml" value="0.25" />
         <entry key="..\:/Users/wonseok/AndroidStudioProjects/ddoc_doc/app/src/main/res/layout/fragment_my_page.xml" value="0.33" />
         <entry key="..\:/Users/wonseok/AndroidStudioProjects/ddoc_doc/app/src/main/res/layout/fragment_search.xml" value="0.30833333333333335" />
         <entry key="..\:/Users/wonseok/AndroidStudioProjects/ddoc_doc/app/src/main/res/layout/login_bottom_sheet_dialog.xml" value="0.30833333333333335" />

@@ -1,18 +1,16 @@
 package com.wonseok.ddoc_doc
 
-import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.view.View
 import android.widget.Toast
-import androidx.appcompat.widget.AppCompatImageView
-import com.kakao.sdk.auth.LoginClient
-import com.kakao.sdk.auth.model.OAuthToken
-import com.kakao.sdk.common.model.AuthErrorCause
 import com.kakao.sdk.user.UserApiClient
 import com.wonseok.ddoc_doc.databinding.ActivityMainBinding
 import com.wonseok.ddoc_doc.fragment.HistoryFragment
 import com.wonseok.ddoc_doc.fragment.MyPageFragment
 import com.wonseok.ddoc_doc.fragment.SearchFragment
+import kotlinx.android.synthetic.main.fragment_history.*
+import kotlinx.android.synthetic.main.fragment_my_page.*
 
 
 class MainActivity : AppCompatActivity() {
@@ -36,20 +34,61 @@ class MainActivity : AppCompatActivity() {
 
         onNavigationItemSelectedListener
 
+        // 처음 앱 실행 시 로그인 되었는지 확인하는 부분
         UserApiClient.instance.accessTokenInfo { tokenInfo, error ->
+            // 한번도 로그인 안했다면
             if (error != null) {
-                Toast.makeText(this, "토큰 정보 보기 실패", Toast.LENGTH_SHORT).show()
+//                Toast.makeText(this, "토큰 정보 보기 실패", Toast.LENGTH_SHORT).show()
             }
+            // 한번 로그인 되었다면
             else if (tokenInfo != null) {
-                Toast.makeText(this, "토큰 정보 보기 성공", Toast.LENGTH_SHORT).show()
-//                val intent = Intent(this, MainActivity::class.java)
-//                startActivity(intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP))
+                UserApiClient.instance.me { user, error ->
+                    Toast.makeText(this, "${user?.kakaoAccount?.profile?.nickname}님 환영합니다!", Toast.LENGTH_SHORT).show()
+                }
             }
         }
 
 
 
     }
+
+    fun updateHistoryFragmentUI() {
+
+        historyFragment = HistoryFragment.newInstance()
+        supportFragmentManager.beginTransaction()
+            .replace(R.id.frameLayout, historyFragment).commit()
+
+        UserApiClient.instance.me { user, error ->
+            if (user?.kakaoAccount?.profile?.nickname == null) {
+                historyFragment.loginDialog()
+            }
+            else {
+                historyFragment.fragmentHistoryBannerImageView.visibility = View.VISIBLE
+                historyFragment.fragmentHistoryUserNameTextView.text = "${user?.kakaoAccount?.profile?.nickname}님"
+                historyFragment.fragmentHistoryUserNameTextView.visibility = View.VISIBLE
+            }
+        }
+    }
+
+    private fun updateMyPageFragmentUI() {
+        myPageFragment = MyPageFragment.newInstance()
+        supportFragmentManager.beginTransaction()
+            .replace(R.id.frameLayout, myPageFragment).commit()
+
+        UserApiClient.instance.me { user, error ->
+            if (user?.kakaoAccount?.profile?.nickname == null) {
+                myPageFragment.myPageTextView.visibility = View.VISIBLE
+                myPageFragment.myPageLoginTextView.visibility = View.VISIBLE
+                myPageFragment.myPageEditTextView.visibility = View.GONE
+            }
+            else {
+                myPageFragment.myPageTextView.visibility = View.VISIBLE
+                myPageFragment.myPageTextView.text = "${user?.kakaoAccount?.profile?.nickname}"
+                myPageFragment.myPageEditTextView.visibility = View.VISIBLE
+            }
+        }
+    }
+
 
 
     override fun onBackPressed() {
@@ -75,17 +114,17 @@ class MainActivity : AppCompatActivity() {
                             .replace(R.id.frameLayout, searchFragment).commit()
                     }
                     R.id.menu_history -> {
-                        historyFragment = HistoryFragment.newInstance()
-                        supportFragmentManager.beginTransaction()
-                            .replace(R.id.frameLayout, historyFragment).commit()
+                        updateHistoryFragmentUI()
                     }
                     R.id.menu_my_page -> {
-                        myPageFragment = MyPageFragment.newInstance()
-                        supportFragmentManager.beginTransaction()
-                            .replace(R.id.frameLayout, myPageFragment).commit()
+                        updateMyPageFragmentUI()
                     }
                 }
                 true
             }
+    }
+
+    override fun onDestroy() {
+        super.onDestroy()
     }
 }
