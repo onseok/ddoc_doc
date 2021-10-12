@@ -1,25 +1,17 @@
 package com.wonseok.ddoc_doc.fragment
 
-import android.content.Context
-import android.content.Intent
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
-import androidx.appcompat.widget.AppCompatImageButton
 import com.google.android.material.bottomsheet.BottomSheetDialogFragment
 import com.kakao.sdk.auth.LoginClient
 import com.kakao.sdk.auth.model.OAuthToken
 import com.kakao.sdk.common.model.AuthErrorCause
-import com.kakao.sdk.user.UserApiClient
 import com.wonseok.ddoc_doc.MainActivity
 import com.wonseok.ddoc_doc.R
-import com.wonseok.ddoc_doc.SecondActivity
-import com.wonseok.ddoc_doc.databinding.FragmentMyPageBinding
-import com.wonseok.ddoc_doc.databinding.FragmentSearchBinding
 import com.wonseok.ddoc_doc.databinding.LoginBottomSheetDialogBinding
-import kotlinx.android.synthetic.main.login_bottom_sheet_dialog.*
 
 class LoginBottomSheet : BottomSheetDialogFragment() {
 

@@ -70,7 +70,7 @@ class MainActivity : AppCompatActivity() {
         }
     }
 
-    private fun updateMyPageFragmentUI() {
+    fun updateMyPageFragmentUI() {
         myPageFragment = MyPageFragment.newInstance()
         supportFragmentManager.beginTransaction()
             .replace(R.id.frameLayout, myPageFragment).commit()

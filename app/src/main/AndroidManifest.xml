@@ -17,6 +17,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Ddoc_doc">
         <activity
+            android:name=".EditActivity"
+            android:exported="true" />
+        <activity
             android:name=".SecondActivity"
             android:exported="true" />
         <activity
@@ -35,8 +38,6 @@
         <activity
             android:name=".MainActivity"
             android:exported="true" />
-
-
         <activity
             android:name="com.kakao.sdk.auth.AuthCodeHandlerActivity"
             android:exported="true">
@@ -51,7 +52,6 @@
                     android:scheme="kakao31fee878dfb93283630ca1e528dabf48" />
             </intent-filter>
         </activity>
-
     </application>
 
 </manifest>

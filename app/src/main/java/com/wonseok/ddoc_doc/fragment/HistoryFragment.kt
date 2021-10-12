@@ -32,9 +32,6 @@ class HistoryFragment : Fragment() {
             container, false
         )
 
-
-//        loginDialog()
-
         return binding!!.root
     }
 

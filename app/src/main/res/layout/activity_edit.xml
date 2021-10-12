@@ -1,0 +1,347 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".EditActivity">
+
+    <androidx.appcompat.widget.AppCompatImageButton
+        android:id="@+id/editProfileBackButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="10dp"
+        android:backgroundTint="@color/transparent"
+        android:src="@drawable/ic_back_button"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/editProfileTitleTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="10dp"
+        android:fontFamily="@font/ddoc_doc_font"
+        android:text="개인정보 수정"
+        android:textColor="@color/black"
+        android:textSize="16sp"
+        app:layout_constraintBottom_toBottomOf="@id/editProfileBackButton"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.4"
+        app:layout_constraintStart_toEndOf="@id/editProfileBackButton"
+        app:layout_constraintTop_toTopOf="@id/editProfileBackButton" />
+
+    <View
+        android:id="@+id/editProfileTitleDivider"
+        android:layout_width="0dp"
+        android:layout_height="1dp"
+        android:layout_marginTop="15dp"
+        android:background="@color/gray"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/editProfileTitleTextView" />
+
+    <TextView
+        android:id="@+id/editProfilePrivateTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="15dp"
+        android:layout_marginTop="15dp"
+        android:fontFamily="@font/ddoc_doc_font"
+        android:text="개인설정"
+        android:textSize="13sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/editProfileTitleDivider" />
+
+    <View
+        android:id="@+id/editProfileFirstDivider"
+        android:layout_width="0dp"
+        android:layout_height="1dp"
+        android:layout_marginTop="10dp"
+        android:background="@color/gray"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/editProfilePrivateTextView" />
+
+    <TextView
+        android:id="@+id/editProfileProfileTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="15dp"
+        android:layout_marginTop="25dp"
+        android:fontFamily="@font/ddoc_doc_font"
+        android:text="프로필"
+        android:textColor="@color/dark_gray"
+        android:textSize="16sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/editProfileFirstDivider" />
+
+    <TextView
+        android:id="@+id/editProfileProfileDetailTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="dnjstjr245@naver.com"
+        android:textSize="17sp"
+        app:layout_constraintBottom_toBottomOf="@id/editProfileProfileTextView"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.2"
+        app:layout_constraintStart_toEndOf="@id/editProfileProfileTextView"
+        app:layout_constraintTop_toTopOf="@id/editProfileProfileTextView" />
+
+    <View
+        android:id="@+id/editProfileSecondDivider"
+        android:layout_width="0dp"
+        android:layout_height="1dp"
+        android:layout_marginTop="25dp"
+        android:background="@color/gray"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@id/editProfileProfileTextView"
+        app:layout_constraintTop_toBottomOf="@id/editProfileProfileDetailTextView" />
+
+    <TextView
+        android:id="@+id/editProfileNickNameTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="15dp"
+        android:layout_marginTop="25dp"
+        android:fontFamily="@font/ddoc_doc_font"
+        android:text="이름"
+        android:textColor="@color/dark_gray"
+        android:textSize="16sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/editProfileSecondDivider" />
+
+    <TextView
+        android:id="@+id/editProfileNickNameDetailTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/ddoc_doc_font"
+        android:text="김원석"
+        android:textColor="@color/gray"
+        android:textSize="17sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@id/editProfileNickNameTextView"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.2"
+        app:layout_constraintStart_toEndOf="@id/editProfileNickNameTextView"
+        app:layout_constraintTop_toTopOf="@id/editProfileNickNameTextView" />
+
+    <View
+        android:id="@+id/editProfileThirdDivider"
+        android:layout_width="0dp"
+        android:layout_height="1dp"
+        android:layout_marginTop="25dp"
+        android:background="@color/gray"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@id/editProfileNickNameTextView"
+        app:layout_constraintTop_toBottomOf="@id/editProfileNickNameTextView" />
+
+    <TextView
+        android:id="@+id/editProfileLinkTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="15dp"
+        android:layout_marginTop="25dp"
+        android:fontFamily="@font/ddoc_doc_font"
+        android:text="연동계정"
+        android:textColor="@color/dark_gray"
+        android:textSize="16sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/editProfileThirdDivider" />
+
+    <TextView
+        android:id="@+id/editProfileLinkDetailTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="5dp"
+        android:fontFamily="@font/ddoc_doc_font"
+        android:text="카카오 로그인"
+        android:textColor="@color/gray"
+        android:textSize="17sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@id/editProfileLinkTextView"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.2"
+        app:layout_constraintStart_toEndOf="@id/editProfileLinkImageView"
+        app:layout_constraintTop_toTopOf="@id/editProfileLinkTextView" />
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/editProfileLinkImageView"
+        android:layout_width="35dp"
+        android:layout_height="35dp"
+        android:src="@drawable/kakao_logo"
+        app:layout_constraintBottom_toBottomOf="@id/editProfileLinkDetailTextView"
+        app:layout_constraintEnd_toStartOf="@id/editProfileLinkDetailTextView"
+        app:layout_constraintHorizontal_bias="0.1"
+        app:layout_constraintHorizontal_chainStyle="packed"
+        app:layout_constraintStart_toEndOf="@id/editProfileLinkTextView"
+        app:layout_constraintTop_toTopOf="@id/editProfileLinkDetailTextView" />
+
+    <View
+        android:id="@+id/editProfileFourthDivider"
+        android:layout_width="0dp"
+        android:layout_height="5dp"
+        android:layout_marginTop="25dp"
+        android:background="@color/gray"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/editProfileLinkTextView" />
+
+    <TextView
+        android:id="@+id/editProfileMemberTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="15dp"
+        android:layout_marginTop="20dp"
+        android:fontFamily="@font/ddoc_doc_font"
+        android:text="회원설정"
+        android:textSize="13sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/editProfileFourthDivider" />
+
+    <View
+        android:id="@+id/editProfileFifthDivider"
+        android:layout_width="0dp"
+        android:layout_height="1dp"
+        android:layout_marginTop="15dp"
+        android:background="@color/gray"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/editProfileMemberTextView" />
+
+    <TextView
+        android:id="@+id/editProfileSelfCheckTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="15dp"
+        android:layout_marginTop="25dp"
+        android:fontFamily="@font/ddoc_doc_font"
+        android:text="본인 인증하기"
+        android:textColor="@color/dark_gray"
+        android:textSize="16sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/editProfileFifthDivider" />
+
+    <androidx.appcompat.widget.AppCompatImageButton
+        android:id="@+id/editProfileSelfCheckImageButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="5dp"
+        android:backgroundTint="@color/transparent"
+        android:src="@drawable/ic_right_button"
+        app:layout_constraintBottom_toBottomOf="@id/editProfileSelfCheckTextView"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@id/editProfileSelfCheckTextView" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/editProfileSelfCheckButton"
+        android:layout_width="70dp"
+        android:layout_height="25dp"
+        android:background="@drawable/login_custom_button"
+        android:fontFamily="@font/ddoc_doc_font"
+        android:text="인증완료"
+        android:textSize="12sp"
+        app:layout_constraintBottom_toBottomOf="@id/editProfileSelfCheckTextView"
+        app:layout_constraintEnd_toStartOf="@id/editProfileSelfCheckImageButton"
+        app:layout_constraintTop_toTopOf="@id/editProfileSelfCheckTextView" />
+
+    <View
+        android:id="@+id/editProfileSixthDivider"
+        android:layout_width="0dp"
+        android:layout_height="1dp"
+        android:layout_marginTop="25dp"
+        android:background="@color/gray"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@id/editProfileSelfCheckTextView"
+        app:layout_constraintTop_toBottomOf="@id/editProfileSelfCheckTextView" />
+
+
+    <!-- -->
+
+    <TextView
+        android:id="@+id/editProfileChangeExpireTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="15dp"
+        android:layout_marginTop="25dp"
+        android:fontFamily="@font/ddoc_doc_font"
+        android:text="개인정보 유효기간 변경"
+        android:textColor="@color/dark_gray"
+        android:textSize="16sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/editProfileSixthDivider" />
+
+    <androidx.appcompat.widget.AppCompatImageButton
+        android:id="@+id/editProfileChangeExpireImageButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="5dp"
+        android:backgroundTint="@color/transparent"
+        android:src="@drawable/ic_right_button"
+        app:layout_constraintBottom_toBottomOf="@id/editProfileChangeExpireTextView"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@id/editProfileChangeExpireTextView" />
+
+
+    <View
+        android:id="@+id/editProfileSeventhDivider"
+        android:layout_width="0dp"
+        android:layout_height="1dp"
+        android:layout_marginTop="25dp"
+        android:background="@color/gray"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@id/editProfileChangeExpireTextView"
+        app:layout_constraintTop_toBottomOf="@id/editProfileChangeExpireTextView" />
+
+    <!-- -->
+
+    <TextView
+        android:id="@+id/editProfileLogoutTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="15dp"
+        android:layout_marginTop="25dp"
+        android:fontFamily="@font/ddoc_doc_font"
+        android:text="로그아웃"
+        android:textColor="@color/dark_gray"
+        android:textSize="16sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/editProfileSeventhDivider" />
+
+    <androidx.appcompat.widget.AppCompatImageButton
+        android:id="@+id/editProfileLogoutImageButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="5dp"
+        android:backgroundTint="@color/transparent"
+        android:src="@drawable/ic_right_button"
+        app:layout_constraintBottom_toBottomOf="@id/editProfileLogoutTextView"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@id/editProfileLogoutTextView" />
+
+
+    <View
+        android:id="@+id/editProfileEighthDivider"
+        android:layout_width="0dp"
+        android:layout_height="1dp"
+        android:layout_marginTop="25dp"
+        android:background="@color/gray"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@id/editProfileLogoutTextView"
+        app:layout_constraintTop_toBottomOf="@id/editProfileLogoutTextView" />
+
+    <TextView
+        android:id="@+id/editProfileExitMemberTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="15dp"
+        android:fontFamily="@font/ddoc_doc_font"
+        android:text="회원탈퇴"
+        android:textSize="13sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/editProfileEighthDivider" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
