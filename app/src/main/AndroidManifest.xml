@@ -3,12 +3,13 @@
     package="com.wonseok.ddoc_doc">
 
     <uses-permission android:name="android.permission.INTERNET" />
-    <uses-permission android:name="android.permission.CAMERA"/>
+    <uses-permission android:name="android.permission.CAMERA" />
     <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
-    <uses-permission android:name="android.permission.CALL_PHONE"/>
+    <uses-permission android:name="android.permission.CALL_PHONE" />
 
     <application
+        android:name=".utility.GlobalApplication"
         android:allowBackup="true"
         android:icon="@mipmap/ic_main"
         android:label="똑닥(클론)"
@@ -16,23 +17,41 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Ddoc_doc">
         <activity
+            android:name=".SecondActivity"
+            android:exported="true" />
+        <activity
             android:name=".IntroActivity"
             android:exported="true"
             android:theme="@style/SplashTheme">
-
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-
         <activity
             android:name=".PermissionActivity"
             android:exported="true" />
         <activity
             android:name=".MainActivity"
             android:exported="true" />
+
+
+        <activity
+            android:name="com.kakao.sdk.auth.AuthCodeHandlerActivity"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+
+                <data
+                    android:host="oauth"
+                    android:scheme="kakao31fee878dfb93283630ca1e528dabf48" />
+            </intent-filter>
+        </activity>
+
     </application>
 
 </manifest>
