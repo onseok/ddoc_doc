@@ -176,7 +176,7 @@ class SearchActivity : AppCompatActivity() {
                 1000,
                 currentPlace,
                 hospitalName,
-                3000
+                4000
             )
             .enqueue(object : Callback<Hospitals> {
 

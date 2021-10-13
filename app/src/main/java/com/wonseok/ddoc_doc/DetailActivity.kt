@@ -123,8 +123,8 @@ class DetailActivity : AppCompatActivity(), OnMapReadyCallback {
         val marker = Marker()
         marker.position = LatLng(latitude, longitude)
         marker.map = naverMap
-        marker.width = 150
-        marker.height = 150
+        marker.width = 130
+        marker.height = 130
         marker.icon = OverlayImage.fromResource(com.wonseok.ddoc_doc.R.drawable.hospital_marker);
     }
 

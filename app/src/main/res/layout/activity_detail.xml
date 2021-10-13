@@ -486,12 +486,14 @@
             <View
                 android:id="@+id/hospitalDetailTopBackgroundView"
                 android:layout_width="wrap_content"
-                android:layout_height="1dp"
-                android:layout_marginTop="10dp"
+                android:layout_height="0dp"
+                android:layout_marginTop="120dp"
                 android:background="@drawable/top_radius_white_backgroubd_detail"
+                app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/hospitalAddressTextView" />
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0" />
 
             <com.naver.maps.map.MapView
                 android:id="@+id/mapView"
@@ -503,14 +505,15 @@
                 android:translationZ="1dp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/hospitalDetailTopBackgroundView">
+                app:layout_constraintTop_toBottomOf="@id/hospitalAddressTextView">
 
                 <com.naver.maps.map.widget.LocationButtonView
                     android:id="@+id/currentLocationButton"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="top|left"
-                    android:layout_margin="12dp" />
+                    android:layout_margin="12dp"
+                    android:translationZ="1dp" />
 
             </com.naver.maps.map.MapView>
 
@@ -578,66 +581,144 @@
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/doctorTotalNumTextView" />
 
-        <androidx.constraintlayout.widget.ConstraintLayout
-            android:id="@+id/serveInformationLayout"
-            android:layout_width="0dp"
-            android:layout_height="120dp"
-            android:layout_marginStart="15dp"
-            android:layout_marginTop="15dp"
-            android:layout_marginEnd="15dp"
-            android:layout_marginBottom="10dp"
-            android:background="@drawable/detail_custom_background"
-            android:translationZ="1dp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/hospitalDetailFourthDivider">
-
-            <TextView
-                android:id="@+id/serveInformationTitleTextView"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/serveInformationLayout"
+                android:layout_width="0dp"
+                android:layout_height="120dp"
                 android:layout_marginStart="15dp"
                 android:layout_marginTop="15dp"
-                android:fontFamily="@font/ddoc_doc_font"
-                android:text="정보 제공"
-                android:textColor="@color/black"
-                android:textSize="14sp"
-                android:translationZ="1dp"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
-
-            <TextView
-                android:id="@+id/serveInformationFirstTextView"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="15dp"
-                android:layout_marginTop="15dp"
-                android:fontFamily="@font/ddoc_doc_font"
-                android:text="병원정보는 건강보험심사평가원의 의료 빅데이터\n및 해당 병원이 제공한 정보를 기반으로 작성되었습니다."
-                android:textColor="@color/dark_gray"
-                android:textSize="13sp"
-                android:translationZ="1dp"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/serveInformationTitleTextView" />
-
-            <TextView
-                android:id="@+id/serveInformationSecondTextView"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="15dp"
-                android:layout_marginTop="15dp"
-                android:fontFamily="@font/ddoc_doc_font"
-                android:text="정보수정 요청하기    >"
                 android:layout_marginEnd="15dp"
-                android:textColor="@color/black"
-                android:textSize="14sp"
+                android:layout_marginBottom="10dp"
+                android:background="@drawable/detail_custom_background"
                 android:translationZ="1dp"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/serveInformationFirstTextView" />
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/hospitalDetailFourthDivider">
 
+                <TextView
+                    android:id="@+id/serveInformationTitleTextView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="15dp"
+                    android:layout_marginTop="15dp"
+                    android:fontFamily="@font/ddoc_doc_font"
+                    android:text="정보 제공"
+                    android:textColor="@color/black"
+                    android:textSize="14sp"
+                    android:translationZ="1dp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
 
-        </androidx.constraintlayout.widget.ConstraintLayout>
+                <TextView
+                    android:id="@+id/serveInformationFirstTextView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="15dp"
+                    android:layout_marginTop="15dp"
+                    android:fontFamily="@font/ddoc_doc_font"
+                    android:text="병원정보는 건강보험심사평가원의 의료 빅데이터\n및 해당 병원이 제공한 정보를 기반으로 작성되었습니다."
+                    android:textColor="@color/dark_gray"
+                    android:textSize="13sp"
+                    android:translationZ="1dp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/serveInformationTitleTextView" />
 
+                <TextView
+                    android:id="@+id/serveInformationSecondTextView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="15dp"
+                    android:layout_marginTop="15dp"
+                    android:layout_marginEnd="15dp"
+                    android:fontFamily="@font/ddoc_doc_font"
+                    android:text="정보수정 요청하기    >"
+                    android:textColor="@color/black"
+                    android:textSize="14sp"
+                    android:translationZ="1dp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/serveInformationFirstTextView" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <!-- 4 -->
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/introduceServiceLayout"
+                android:layout_width="0dp"
+                android:layout_height="120dp"
+                android:layout_marginStart="15dp"
+                android:layout_marginTop="15dp"
+                android:layout_marginEnd="15dp"
+                android:layout_marginBottom="10dp"
+                android:background="@drawable/introduce_service_background"
+                android:translationZ="1dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/serveInformationLayout">
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/introduceServiceImageView"
+                    android:layout_width="100dp"
+                    android:layout_height="100dp"
+                    android:src="@drawable/ic_introduce_service"
+                    android:translationZ="1dp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/introduceServiceFirstTextView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="15dp"
+                    android:layout_marginTop="15dp"
+                    android:fontFamily="@font/ddoc_doc_font"
+                    android:text="원장님!\n똑딱 서비스가 궁금하세요?"
+                    android:textColor="@color/dark_gray"
+                    android:textSize="13sp"
+                    android:translationZ="1dp"
+                    app:layout_constraintStart_toEndOf="@id/introduceServiceImageView"
+                    app:layout_constraintTop_toTopOf="@id/introduceServiceImageView" />
+
+                <TextView
+                    android:id="@+id/introduceServiceSecondTextView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="15dp"
+                    android:layout_marginTop="25dp"
+                    android:layout_marginEnd="15dp"
+                    android:fontFamily="@font/ddoc_doc_font"
+                    android:text="똑닥 서비스 알아보기    >"
+                    android:textColor="@color/black"
+                    android:textSize="14sp"
+                    android:translationZ="1dp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/introduceServiceFirstTextView" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <View
+                android:id="@+id/hospitalDetailFifthDivider"
+                android:layout_width="0dp"
+                android:layout_height="5dp"
+                android:layout_marginTop="25dp"
+                android:background="@color/light_gray"
+                android:translationZ="1dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/introduceServiceLayout" />
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:layout_marginBottom="50dp"
+                android:gravity="center"
+                android:text="개인정보 처리업무 위탁 정보 공개"
+                android:textSize="12sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/hospitalDetailFifthDivider" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
 
