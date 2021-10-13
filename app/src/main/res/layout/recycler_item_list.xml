@@ -27,5 +27,355 @@
         app:layout_constraintStart_toEndOf="@id/hospitalIcon"
         app:layout_constraintTop_toTopOf="@id/hospitalIcon" />
 
+    <TextView
+        android:id="@+id/XPos"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:fontFamily="@font/ddoc_doc_font"
+        android:text=""
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="@id/hospitalIcon"
+        app:layout_constraintStart_toEndOf="@id/hospitalIcon"
+        app:layout_constraintTop_toTopOf="@id/hospitalIcon" />
+
+    <TextView
+        android:id="@+id/YPos"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:fontFamily="@font/ddoc_doc_font"
+        android:text=""
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="@id/hospitalIcon"
+        app:layout_constraintStart_toEndOf="@id/hospitalIcon"
+        app:layout_constraintTop_toTopOf="@id/hospitalIcon" />
+
+    <TextView
+        android:id="@+id/addr"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:fontFamily="@font/ddoc_doc_font"
+        android:text=""
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="@id/hospitalIcon"
+        app:layout_constraintStart_toEndOf="@id/hospitalIcon"
+        app:layout_constraintTop_toTopOf="@id/hospitalIcon" />
+
+    <TextView
+        android:id="@+id/clCd"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:fontFamily="@font/ddoc_doc_font"
+        android:text=""
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="@id/hospitalIcon"
+        app:layout_constraintStart_toEndOf="@id/hospitalIcon"
+        app:layout_constraintTop_toTopOf="@id/hospitalIcon" />
+
+    <TextView
+        android:id="@+id/clCdNm"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:fontFamily="@font/ddoc_doc_font"
+        android:text=""
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="@id/hospitalIcon"
+        app:layout_constraintStart_toEndOf="@id/hospitalIcon"
+        app:layout_constraintTop_toTopOf="@id/hospitalIcon" />
+
+    <TextView
+        android:id="@+id/cmdcGdrCnt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:fontFamily="@font/ddoc_doc_font"
+        android:text=""
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="@id/hospitalIcon"
+        app:layout_constraintStart_toEndOf="@id/hospitalIcon"
+        app:layout_constraintTop_toTopOf="@id/hospitalIcon" />
+
+    <TextView
+        android:id="@+id/cmdcIntnCnt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:fontFamily="@font/ddoc_doc_font"
+        android:text=""
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="@id/hospitalIcon"
+        app:layout_constraintStart_toEndOf="@id/hospitalIcon"
+        app:layout_constraintTop_toTopOf="@id/hospitalIcon" />
+
+    <TextView
+        android:id="@+id/cmdcResdntCnt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:fontFamily="@font/ddoc_doc_font"
+        android:text=""
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="@id/hospitalIcon"
+        app:layout_constraintStart_toEndOf="@id/hospitalIcon"
+        app:layout_constraintTop_toTopOf="@id/hospitalIcon" />
+
+    <TextView
+        android:id="@+id/cmdcSdrCnt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:fontFamily="@font/ddoc_doc_font"
+        android:text=""
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="@id/hospitalIcon"
+        app:layout_constraintStart_toEndOf="@id/hospitalIcon"
+        app:layout_constraintTop_toTopOf="@id/hospitalIcon" />
+
+    <TextView
+        android:id="@+id/detyGdrCnt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:fontFamily="@font/ddoc_doc_font"
+        android:text=""
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="@id/hospitalIcon"
+        app:layout_constraintStart_toEndOf="@id/hospitalIcon"
+        app:layout_constraintTop_toTopOf="@id/hospitalIcon" />
+
+    <TextView
+        android:id="@+id/detyIntnCnt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:fontFamily="@font/ddoc_doc_font"
+        android:text=""
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="@id/hospitalIcon"
+        app:layout_constraintStart_toEndOf="@id/hospitalIcon"
+        app:layout_constraintTop_toTopOf="@id/hospitalIcon" />
+
+    <TextView
+        android:id="@+id/detyResdntCnt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:fontFamily="@font/ddoc_doc_font"
+        android:text=""
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="@id/hospitalIcon"
+        app:layout_constraintStart_toEndOf="@id/hospitalIcon"
+        app:layout_constraintTop_toTopOf="@id/hospitalIcon" />
+
+    <TextView
+        android:id="@+id/detySdrCnt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:fontFamily="@font/ddoc_doc_font"
+        android:text=""
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="@id/hospitalIcon"
+        app:layout_constraintStart_toEndOf="@id/hospitalIcon"
+        app:layout_constraintTop_toTopOf="@id/hospitalIcon" />
+
+    <TextView
+        android:id="@+id/drTotCnt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:fontFamily="@font/ddoc_doc_font"
+        android:text=""
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="@id/hospitalIcon"
+        app:layout_constraintStart_toEndOf="@id/hospitalIcon"
+        app:layout_constraintTop_toTopOf="@id/hospitalIcon" />
+
+    <TextView
+        android:id="@+id/emdongNm"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:fontFamily="@font/ddoc_doc_font"
+        android:text=""
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="@id/hospitalIcon"
+        app:layout_constraintStart_toEndOf="@id/hospitalIcon"
+        app:layout_constraintTop_toTopOf="@id/hospitalIcon" />
+
+    <TextView
+        android:id="@+id/estbDd"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:fontFamily="@font/ddoc_doc_font"
+        android:text=""
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="@id/hospitalIcon"
+        app:layout_constraintStart_toEndOf="@id/hospitalIcon"
+        app:layout_constraintTop_toTopOf="@id/hospitalIcon" />
+
+    <TextView
+        android:id="@+id/hospUrl"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:fontFamily="@font/ddoc_doc_font"
+        android:text=""
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="@id/hospitalIcon"
+        app:layout_constraintStart_toEndOf="@id/hospitalIcon"
+        app:layout_constraintTop_toTopOf="@id/hospitalIcon" />
+
+    <TextView
+        android:id="@+id/mdeptGdrCnt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:fontFamily="@font/ddoc_doc_font"
+        android:text=""
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="@id/hospitalIcon"
+        app:layout_constraintStart_toEndOf="@id/hospitalIcon"
+        app:layout_constraintTop_toTopOf="@id/hospitalIcon" />
+
+    <TextView
+        android:id="@+id/mdeptIntnCnt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:fontFamily="@font/ddoc_doc_font"
+        android:text=""
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="@id/hospitalIcon"
+        app:layout_constraintStart_toEndOf="@id/hospitalIcon"
+        app:layout_constraintTop_toTopOf="@id/hospitalIcon" />
+
+    <TextView
+        android:id="@+id/mdeptResdntCnt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:fontFamily="@font/ddoc_doc_font"
+        android:text=""
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="@id/hospitalIcon"
+        app:layout_constraintStart_toEndOf="@id/hospitalIcon"
+        app:layout_constraintTop_toTopOf="@id/hospitalIcon" />
+
+    <TextView
+        android:id="@+id/mdeptSdrCnt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:fontFamily="@font/ddoc_doc_font"
+        android:text=""
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="@id/hospitalIcon"
+        app:layout_constraintStart_toEndOf="@id/hospitalIcon"
+        app:layout_constraintTop_toTopOf="@id/hospitalIcon" />
+
+    <TextView
+        android:id="@+id/postNo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:fontFamily="@font/ddoc_doc_font"
+        android:text=""
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="@id/hospitalIcon"
+        app:layout_constraintStart_toEndOf="@id/hospitalIcon"
+        app:layout_constraintTop_toTopOf="@id/hospitalIcon" />
+
+    <TextView
+        android:id="@+id/sgguCd"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:fontFamily="@font/ddoc_doc_font"
+        android:text=""
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="@id/hospitalIcon"
+        app:layout_constraintStart_toEndOf="@id/hospitalIcon"
+        app:layout_constraintTop_toTopOf="@id/hospitalIcon" />
+
+    <TextView
+        android:id="@+id/sgguCdNm"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:fontFamily="@font/ddoc_doc_font"
+        android:text=""
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="@id/hospitalIcon"
+        app:layout_constraintStart_toEndOf="@id/hospitalIcon"
+        app:layout_constraintTop_toTopOf="@id/hospitalIcon" />
+
+    <TextView
+        android:id="@+id/sidoCd"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:fontFamily="@font/ddoc_doc_font"
+        android:text=""
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="@id/hospitalIcon"
+        app:layout_constraintStart_toEndOf="@id/hospitalIcon"
+        app:layout_constraintTop_toTopOf="@id/hospitalIcon" />
+
+    <TextView
+        android:id="@+id/sidoCdNm"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:fontFamily="@font/ddoc_doc_font"
+        android:text=""
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="@id/hospitalIcon"
+        app:layout_constraintStart_toEndOf="@id/hospitalIcon"
+        app:layout_constraintTop_toTopOf="@id/hospitalIcon" />
+
+    <TextView
+        android:id="@+id/telno"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:fontFamily="@font/ddoc_doc_font"
+        android:text=""
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="@id/hospitalIcon"
+        app:layout_constraintStart_toEndOf="@id/hospitalIcon"
+        app:layout_constraintTop_toTopOf="@id/hospitalIcon" />
+
+    <TextView
+        android:id="@+id/yadmNm"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:fontFamily="@font/ddoc_doc_font"
+        android:text=""
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="@id/hospitalIcon"
+        app:layout_constraintStart_toEndOf="@id/hospitalIcon"
+        app:layout_constraintTop_toTopOf="@id/hospitalIcon" />
+
+    <TextView
+        android:id="@+id/ykiho"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:fontFamily="@font/ddoc_doc_font"
+        android:text=""
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="@id/hospitalIcon"
+        app:layout_constraintStart_toEndOf="@id/hospitalIcon"
+        app:layout_constraintTop_toTopOf="@id/hospitalIcon" />
+
+
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>

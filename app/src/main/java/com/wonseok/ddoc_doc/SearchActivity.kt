@@ -36,7 +36,7 @@ class SearchActivity : AppCompatActivity() {
     private val editText: EditText by lazy {
         findViewById(R.id.searchActivityEditTextView)
     }
-    private val listItems = arrayListOf<ListLayout>()   // 리사이클러 뷰 아이템
+    private val listItems = arrayListOf<Item>()   // 리사이클러 뷰 아이템
     private val listAdapter = HospitalAdapter(listItems)    // 리사이클러 뷰 어댑터
 
     var hospitalName = ""
@@ -94,8 +94,67 @@ class SearchActivity : AppCompatActivity() {
 //                binding.mapView.setMapCenterPointAndZoomLevel(mapPoint, 1, true)
 
                 val hospitalName = listItems[position].yadmNm
+                val XPos = listItems[position].XPos.toString()
+                val YPos = listItems[position].YPos.toString()
+                val addr = listItems[position].addr
+                val clCd  = listItems[position].clCd.toString()
+                val clCdNm = listItems[position].clCdNm
+                val cmdcGdrCnt = listItems[position].cmdcGdrCnt.toString()
+                val cmdcIntnCnt = listItems[position].cmdcIntnCnt.toString()
+                val cmdcResdntCnt = listItems[position].cmdcResdntCnt.toString()
+                val cmdcSdrCnt = listItems[position].cmdcSdrCnt.toString()
+                val detyGdrCnt = listItems[position].detyGdrCnt.toString()
+                val detyIntnCnt = listItems[position].detyIntnCnt.toString()
+                val detyResdntCnt = listItems[position].detyResdntCnt.toString()
+                val detySdrCnt = listItems[position].detySdrCnt.toString()
+                val drTotCnt = listItems[position].drTotCnt.toString()
+                val emdongNm = listItems[position].emdongNm
+                val estbDd = listItems[position].estbDd.toString()
+                val hospUrl = listItems[position].hospUrl
+                val mdeptGdrCnt = listItems[position].mdeptGdrCnt.toString()
+                val mdeptIntnCnt = listItems[position].mdeptIntnCnt.toString()
+                val mdeptResdntCnt = listItems[position].mdeptResdntCnt.toString()
+                val mdeptSdrCnt = listItems[position].mdeptSdrCnt.toString()
+                val postNo = listItems[position].postNo.toString()
+                val sgguCd = listItems[position].sgguCd.toString()
+                val sgguCdNm = listItems[position].sgguCdNm
+                val sidoCd = listItems[position].sidoCd.toString()
+                val sidoCdNm = listItems[position].sidoCdNm
+                val telno = listItems[position].telno
+                val ykiho= listItems[position].ykiho
                 val intent = Intent(this@SearchActivity, DetailActivity::class.java)
-                intent.putExtra("hospitalName", hospitalName)
+
+                with(intent) {
+                    putExtra("hospitalName", hospitalName)
+                    putExtra("XPos", XPos)
+                    putExtra("YPos", YPos)
+                    putExtra("addr", addr)
+                    putExtra("clCd", clCd)
+                    putExtra("clCdNm", clCdNm)
+                    putExtra("cmdcGdrCnt", cmdcGdrCnt)
+                    putExtra("cmdcIntnCnt", cmdcIntnCnt)
+                    putExtra("cmdcResdntCnt", cmdcResdntCnt)
+                    putExtra("cmdcSdrCnt", cmdcSdrCnt)
+                    putExtra("detyGdrCnt", detyGdrCnt)
+                    putExtra("detyIntnCnt", detyIntnCnt)
+                    putExtra("detyResdntCnt", detyResdntCnt)
+                    putExtra("detySdrCnt", detySdrCnt)
+                    putExtra("drTotCnt", drTotCnt)
+                    putExtra("emdongNm", emdongNm)
+                    putExtra("estbDd", estbDd)
+                    putExtra("hospUrl", hospUrl)
+                    putExtra("mdeptGdrCnt", mdeptGdrCnt)
+                    putExtra("mdeptIntnCnt", mdeptIntnCnt)
+                    putExtra("mdeptResdntCnt", mdeptResdntCnt)
+                    putExtra("mdeptSdrCnt", mdeptSdrCnt)
+                    putExtra("postNo", postNo)
+                    putExtra("sgguCd", sgguCd)
+                    putExtra("sgguCdNm", sgguCdNm)
+                    putExtra("sidoCd", sidoCd)
+                    putExtra("sidoCdNm", sidoCdNm)
+                    putExtra("telno", telno)
+                    putExtra("ykiho", ykiho)
+                }
                 startActivity(intent)
             }
         })
@@ -157,7 +216,37 @@ class SearchActivity : AppCompatActivity() {
         listItems.clear() // 리스트 초기화
         for (hospital in searchResult!!.response.body.items.item) {
             // 결과를 리사이클러 뷰에 추가
-            val item = ListLayout(hospital.yadmNm)
+            val item = Item(
+                hospital.XPos,
+                hospital.YPos,
+                hospital.addr,
+                hospital.clCd,
+                hospital.clCdNm,
+                hospital.cmdcGdrCnt,
+                hospital.cmdcIntnCnt,
+                hospital.cmdcResdntCnt,
+                hospital.cmdcSdrCnt,
+                hospital.detyGdrCnt,
+                hospital.detyIntnCnt,
+                hospital.detyResdntCnt,
+                hospital.detySdrCnt,
+                hospital.drTotCnt,
+                hospital.emdongNm,
+                hospital.estbDd,
+                hospital.hospUrl,
+                hospital.mdeptGdrCnt,
+                hospital.mdeptIntnCnt,
+                hospital.mdeptResdntCnt,
+                hospital.mdeptSdrCnt,
+                hospital.postNo,
+                hospital.sgguCd,
+                hospital.sgguCdNm,
+                hospital.sidoCd,
+                hospital.sidoCdNm,
+                hospital.telno,
+                hospital.yadmNm,
+                hospital.ykiho
+            )
             listItems.add(item)
         }
         listAdapter.notifyDataSetChanged()

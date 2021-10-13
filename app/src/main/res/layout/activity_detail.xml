@@ -104,7 +104,7 @@
                 android:id="@+id/hospitalDetailYearTextView"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="15dp"
+                android:layout_marginStart="20dp"
                 android:layout_marginTop="30dp"
                 android:fontFamily="@font/ddoc_doc_font"
                 android:text="설립 3년"
@@ -118,7 +118,7 @@
                 android:id="@+id/hospitalDetailTitleTextView"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="15dp"
+                android:layout_marginStart="20dp"
                 android:layout_marginTop="10dp"
                 android:fontFamily="@font/ddoc_doc_font"
                 android:text="이지은산부인과의원"
@@ -179,11 +179,14 @@
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:id="@+id/doctorScheduleTableLayout"
                 android:layout_width="0dp"
-                android:layout_height="300dp"
+                android:layout_height="290dp"
                 android:layout_marginStart="15dp"
                 android:layout_marginTop="15dp"
                 android:layout_marginEnd="15dp"
+                android:layout_marginBottom="10dp"
                 android:background="@drawable/detail_custom_background"
+                android:translationZ="1dp"
+                app:layout_constraintBottom_toTopOf="@id/hospitalDetailSecondDivider"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/doctorTimeLaunchTextView">
@@ -198,6 +201,7 @@
                     android:text="월요일"
                     android:textColor="@color/dark_gray"
                     android:textSize="15sp"
+                    android:translationZ="1dp"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent" />
 
@@ -211,6 +215,7 @@
                     android:text="화요일"
                     android:textColor="@color/dark_gray"
                     android:textSize="15sp"
+                    android:translationZ="1dp"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintTop_toTopOf="parent" />
 
@@ -222,6 +227,7 @@
                     android:fontFamily="@font/ddoc_doc_font"
                     android:text="09:30~19:00"
                     android:textSize="13sp"
+                    android:translationZ="1dp"
                     app:layout_constraintStart_toStartOf="@id/detailMondayTextView"
                     app:layout_constraintTop_toBottomOf="@id/detailMondayTextView" />
 
@@ -233,6 +239,7 @@
                     android:fontFamily="@font/ddoc_doc_font"
                     android:text="09:30~19:00"
                     android:textSize="13sp"
+                    android:translationZ="1dp"
                     app:layout_constraintStart_toStartOf="@id/detailTuesdayTextView"
                     app:layout_constraintTop_toBottomOf="@id/detailTuesdayTextView" />
 
@@ -243,6 +250,7 @@
                     android:layout_marginTop="10dp"
                     android:layout_marginEnd="20dp"
                     android:background="@color/gray"
+                    android:translationZ="1dp"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="@id/detailMondayTimeTextView"
                     app:layout_constraintTop_toBottomOf="@id/detailMondayTimeTextView" />
@@ -259,6 +267,7 @@
                     android:text="수요일"
                     android:textColor="@color/dark_gray"
                     android:textSize="15sp"
+                    android:translationZ="1dp"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@id/scheduleFirstDivider" />
 
@@ -272,6 +281,7 @@
                     android:text="목요일"
                     android:textColor="@color/dark_gray"
                     android:textSize="15sp"
+                    android:translationZ="1dp"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintTop_toTopOf="@id/scheduleFirstDivider" />
 
@@ -283,6 +293,7 @@
                     android:fontFamily="@font/ddoc_doc_font"
                     android:text="09:30~19:00"
                     android:textSize="13sp"
+                    android:translationZ="1dp"
                     app:layout_constraintStart_toStartOf="@id/detailWednesdayTextView"
                     app:layout_constraintTop_toBottomOf="@id/detailWednesdayTextView" />
 
@@ -294,6 +305,7 @@
                     android:fontFamily="@font/ddoc_doc_font"
                     android:text="09:30~19:00"
                     android:textSize="13sp"
+                    android:translationZ="1dp"
                     app:layout_constraintStart_toStartOf="@id/detailThursdayTextView"
                     app:layout_constraintTop_toBottomOf="@id/detailThursdayTextView" />
 
@@ -304,20 +316,202 @@
                     android:layout_marginTop="10dp"
                     android:layout_marginEnd="20dp"
                     android:background="@color/gray"
+                    android:translationZ="1dp"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="@id/detailMondayTimeTextView"
                     app:layout_constraintTop_toBottomOf="@id/detailThursdayTimeTextView" />
 
+                <!-- 2 -->
+
+                <TextView
+                    android:id="@+id/detailFridayTextView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="20dp"
+                    android:layout_marginTop="20dp"
+                    android:fontFamily="@font/ddoc_doc_font"
+                    android:text="금요일"
+                    android:textColor="@color/dark_gray"
+                    android:textSize="15sp"
+                    android:translationZ="1dp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/scheduleSecondDivider" />
+
+                <TextView
+                    android:id="@+id/detailSaturdayTextView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:layout_marginEnd="120dp"
+                    android:fontFamily="@font/ddoc_doc_font"
+                    android:text="토요일"
+                    android:textColor="@color/blue"
+                    android:textSize="15sp"
+                    android:translationZ="1dp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/scheduleSecondDivider" />
+
+                <TextView
+                    android:id="@+id/detailFridayTimeTextView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:fontFamily="@font/ddoc_doc_font"
+                    android:text="09:30~19:00"
+                    android:textSize="13sp"
+                    android:translationZ="1dp"
+                    app:layout_constraintStart_toStartOf="@id/detailFridayTextView"
+                    app:layout_constraintTop_toBottomOf="@id/detailFridayTextView" />
+
+                <TextView
+                    android:id="@+id/detailSaturdayTimeTextView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:fontFamily="@font/ddoc_doc_font"
+                    android:text="09:30~16:00"
+                    android:textSize="13sp"
+                    android:translationZ="1dp"
+                    app:layout_constraintStart_toStartOf="@id/detailSaturdayTextView"
+                    app:layout_constraintTop_toBottomOf="@id/detailSaturdayTextView" />
+
+                <View
+                    android:id="@+id/scheduleThirdDivider"
+                    android:layout_width="0dp"
+                    android:layout_height="1dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginEnd="20dp"
+                    android:background="@color/gray"
+                    android:translationZ="1dp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="@id/detailFridayTimeTextView"
+                    app:layout_constraintTop_toBottomOf="@id/detailSaturdayTimeTextView" />
+
+                <!-- 3 -->
+
+                <TextView
+                    android:id="@+id/detailSundayTextView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="20dp"
+                    android:layout_marginTop="20dp"
+                    android:fontFamily="@font/ddoc_doc_font"
+                    android:text="일요일"
+                    android:textColor="@color/pink"
+                    android:textSize="15sp"
+                    android:translationZ="1dp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/scheduleThirdDivider" />
+
+                <TextView
+                    android:id="@+id/detailHolidayTextView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:layout_marginEnd="120dp"
+                    android:fontFamily="@font/ddoc_doc_font"
+                    android:text="공휴일"
+                    android:textColor="@color/pink"
+                    android:textSize="15sp"
+                    android:translationZ="1dp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/scheduleThirdDivider" />
+
+                <TextView
+                    android:id="@+id/detailSundayTimeTextView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:fontFamily="@font/ddoc_doc_font"
+                    android:text="휴무일"
+                    android:textSize="13sp"
+                    android:translationZ="1dp"
+                    app:layout_constraintStart_toStartOf="@id/detailSundayTextView"
+                    app:layout_constraintTop_toBottomOf="@id/detailSundayTextView" />
+
+                <TextView
+                    android:id="@+id/detailHolidayTimeTextView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:fontFamily="@font/ddoc_doc_font"
+                    android:text="휴무일"
+                    android:textSize="13sp"
+                    android:translationZ="1dp"
+                    app:layout_constraintStart_toStartOf="@id/detailHolidayTextView"
+                    app:layout_constraintTop_toBottomOf="@id/detailHolidayTextView" />
+
+
             </androidx.constraintlayout.widget.ConstraintLayout>
 
+            <View
+                android:id="@+id/hospitalDetailSecondDivider"
+                android:layout_width="0dp"
+                android:layout_height="5dp"
+                android:layout_marginTop="15dp"
+                android:background="@color/light_gray"
+                android:translationZ="1dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/doctorScheduleTableLayout" />
+
+            <TextView
+                android:id="@+id/hospitalMapTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="25dp"
+                android:fontFamily="@font/ddoc_doc_font"
+                android:text="위치정보"
+                android:translationZ="1dp"
+                app:layout_constraintStart_toStartOf="@id/hospitalDetailTitleTextView"
+                app:layout_constraintTop_toBottomOf="@id/hospitalDetailSecondDivider" />
+
+            <TextView
+                android:id="@+id/hospitalAddressTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:ellipsize="end"
+                android:fontFamily="@font/ddoc_doc_font"
+                android:maxLines="1"
+                android:text="서울특별시 동작구 동작대로 121 경원빌딩"
+                android:textColor="@color/black"
+                android:textSize="16sp"
+                android:translationZ="1dp"
+                app:layout_constraintStart_toStartOf="@id/hospitalMapTextView"
+                app:layout_constraintTop_toBottomOf="@id/hospitalMapTextView" />
 
             <View
+                android:id="@+id/hospitalDetailTopBackgroundView"
                 android:layout_width="wrap_content"
-                android:layout_height="90dp"
+                android:layout_height="1dp"
                 android:background="@drawable/top_radius_white_backgroubd_detail"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent" />
+
+            <com.naver.maps.map.MapView
+                android:id="@+id/hospitalMapView"
+                android:layout_width="0dp"
+                android:layout_height="290dp"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginEnd="20dp"
+                android:translationZ="1dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/hospitalDetailTopBackgroundView" />
+
+            <View
+                android:id="@+id/hospitalDetailThirdDivider"
+                android:layout_width="0dp"
+                android:layout_height="5dp"
+                android:layout_marginTop="15dp"
+                android:background="@color/light_gray"
+                android:translationZ="1dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/hospitalMapView" />
 
 
         </androidx.constraintlayout.widget.ConstraintLayout>
