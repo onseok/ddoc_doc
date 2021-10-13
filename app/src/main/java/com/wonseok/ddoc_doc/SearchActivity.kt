@@ -3,6 +3,8 @@ package com.wonseok.ddoc_doc
 import android.content.Context
 import android.content.Intent
 import android.os.Bundle
+import android.text.Editable
+import android.text.TextWatcher
 import android.util.Log
 import android.view.KeyEvent
 import android.view.MotionEvent
@@ -11,6 +13,7 @@ import android.view.inputmethod.InputMethodManager
 import android.widget.EditText
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
+import androidx.core.widget.addTextChangedListener
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.google.gson.GsonBuilder
 import com.wonseok.ddoc_doc.adapters.HospitalAdapter
@@ -52,12 +55,39 @@ class SearchActivity : AppCompatActivity() {
 
         initViews()
         initHospitalRecyclerView()
-        // 검색 버튼을 누른다면 loadHospitals 메서드 호출
-        binding.searchActivitySearchButton.setOnClickListener {
-            hospitalName = binding.searchActivityEditTextView.text.toString()
-            currentPlace = binding.hereLocationButton.text.substring(6) ?: ""
-            loadHospitals(currentPlace, hospitalName)
-        }
+
+
+//        // 검색 버튼을 누른다면 loadHospitals 메서드 호출
+//        binding.searchActivitySearchButton.setOnClickListener {
+//            hospitalName = binding.searchActivityEditTextView.text.toString()
+//            currentPlace = binding.hereLocationButton.text.substring(6) ?: ""
+//            loadHospitals(currentPlace, hospitalName)
+//        }
+
+//
+//        binding.searchActivityEditTextView.setOnKeyListener { view, i, keyEvent ->
+//            hospitalName = binding.searchActivityEditTextView.text.toString()
+//            currentPlace = binding.hereLocationButton.text.substring(6) ?: ""
+//
+//            if (i == KeyEvent.KEYCODE_ALL_APPS && keyEvent.action == MotionEvent.ACTION_DOWN) {
+//                loadHospitals(currentPlace, hospitalName)
+//                return@setOnKeyListener true
+//            }
+//            return@setOnKeyListener false
+//        }
+
+        // 실시간 검색 처리
+        binding.searchActivityEditTextView.addTextChangedListener(object : TextWatcher {
+            override fun afterTextChanged(p0: Editable?) {
+            }
+            override fun beforeTextChanged(p0: CharSequence?, p1: Int, p2: Int, p3: Int) {
+            }
+            override fun onTextChanged(str: CharSequence?, p1: Int, p2: Int, p3: Int) {
+                hospitalName = binding.searchActivityEditTextView.text.toString()
+                currentPlace = binding.hereLocationButton.text.substring(6) ?: ""
+                loadHospitals(currentPlace, hospitalName)
+            }
+        })
 
     }
 
