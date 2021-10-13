@@ -18,6 +18,7 @@ interface HospitalOpenService {
         @Query("pageNo") pageNumber: Int,
         @Query("numOfRows") numberOfRows: Int,
         @Query("emdongNm") emdongName: String,
+        @Query("yadmNm") yadmNm: String,
         @Query("radius") radius: Int
     ): Call<Hospitals>
 }

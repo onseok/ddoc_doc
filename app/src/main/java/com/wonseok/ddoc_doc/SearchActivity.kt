@@ -1,16 +1,24 @@
 package com.wonseok.ddoc_doc
 
 import android.content.Context
+import android.content.Intent
 import android.os.Bundle
 import android.util.Log
+import android.view.KeyEvent
+import android.view.MotionEvent
+import android.view.View
 import android.view.inputmethod.InputMethodManager
 import android.widget.EditText
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
+import androidx.recyclerview.widget.LinearLayoutManager
 import com.google.gson.GsonBuilder
+import com.wonseok.ddoc_doc.adapters.HospitalAdapter
 import com.wonseok.ddoc_doc.api.HospitalOpenApi
 import com.wonseok.ddoc_doc.api.HospitalOpenService
 import com.wonseok.ddoc_doc.data.Hospitals
+import com.wonseok.ddoc_doc.data.Item
+import com.wonseok.ddoc_doc.data.ListLayout
 import com.wonseok.ddoc_doc.databinding.ActivitySearchBinding
 import retrofit2.Call
 import retrofit2.Callback
@@ -25,7 +33,11 @@ class SearchActivity : AppCompatActivity() {
     private val editText: EditText by lazy {
         findViewById(R.id.searchActivityEditTextView)
     }
+    private val listItems = arrayListOf<ListLayout>()   // 리사이클러 뷰 아이템
+    private val listAdapter = HospitalAdapter(listItems)    // 리사이클러 뷰 어댑터
 
+    var hospitalName = ""
+    var currentPlace = "사당동"
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -38,12 +50,14 @@ class SearchActivity : AppCompatActivity() {
             onBackPressed()
         }
 
-        // 현위치 검색어 가져오기, 문자열 슬라이싱
-        val currentPlace = intent.getStringExtra("currentPlace")?.substring(6) ?: ""
-
-        loadHospitals(currentPlace)
-
         initViews()
+        initHospitalRecyclerView()
+        // 검색 버튼을 누른다면 loadHospitals 메서드 호출
+        binding.searchActivitySearchButton.setOnClickListener {
+            hospitalName = binding.searchActivityEditTextView.text.toString()
+            currentPlace = binding.hereLocationButton.text.substring(6) ?: ""
+            loadHospitals(currentPlace, hospitalName)
+        }
 
     }
 
@@ -52,45 +66,80 @@ class SearchActivity : AppCompatActivity() {
         binding.visitDayButton.text = intent.getStringExtra("currentDate") ?: ""
     }
 
-    private fun loadHospitals(currentPlace: String) {
-        var gson = GsonBuilder().setLenient().create()
+
+    private fun initHospitalRecyclerView() {
+        binding.searchActivityRecyclerView.layoutManager =
+            LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false)
+        binding.searchActivityRecyclerView.adapter = listAdapter
+    }
+
+    private fun loadHospitals(currentPlace: String, hospitalName: String) {
+//        var gson = GsonBuilder().setLenient().create()
 
         val retrofit = Retrofit.Builder()
             .baseUrl(HospitalOpenApi.DOMAIN)
-            .addConverterFactory(GsonConverterFactory.create(gson))
+            .addConverterFactory(GsonConverterFactory.create())
             .build()
 
         val hospitalOpenService = retrofit.create(HospitalOpenService::class.java)
 
         hospitalOpenService
-            .getHospitals((getString(R.string.hospitalInfoApiKey)), 1, 10, currentPlace, 3000)
+            .getHospitals(
+                (getString(R.string.hospitalInfoApiKey)),
+                1,
+                10,
+                currentPlace,
+                hospitalName,
+                3000
+            )
             .enqueue(object : Callback<Hospitals> {
 
                 override fun onFailure(call: Call<Hospitals>, t: Throwable) {
-                    Toast.makeText(baseContext, "서버에서 데이터를 가져올 수 없습니다.", Toast.LENGTH_SHORT).show()
-                    Log.e("TAG", t.toString())
+                    // 통신 실패
+                    Log.w("LocalSearch", "통신 실패: ${t.message}")
                 }
 
                 override fun onResponse(call: Call<Hospitals>, response: Response<Hospitals>) {
-                    showHospitals(response.body() as Hospitals)
-
+//                    showHospitals(response.body() as Hospitals)
+                    // 통신 성공
                     response.body()?.let {
-                        Log.d("TAG", it.toString())
-
                         it.response.body.items.item.forEach { hospital ->
                             Log.d("TAG", hospital.toString())
                         }
-
                     }
+
+                    // 병원 검색 결과 처리 함수
+                    showHospitalList(response.body())
                 }
 
             })
 
     }
 
-    private fun showHospitals(hospitals: Hospitals) {
+    private fun showHospitalList(searchResult: Hospitals?) {
+        binding.hereLocationButton.visibility = View.GONE
+        binding.visitDayButton.visibility = View.GONE
+        binding.searchActivitySecondDivider.visibility = View.GONE
+        binding.searchActivityRecommendTextView.visibility = View.GONE
+        binding.searchActivityRecommendSubtextView.visibility = View.GONE
+        binding.firstRecommendButton.visibility = View.GONE
+        binding.secondRecommendButton.visibility = View.GONE
+        binding.thirdRecommendButton.visibility = View.GONE
+        binding.fourthRecommendButton.visibility = View.GONE
+        binding.fifthRecommendButton.visibility = View.GONE
+        binding.recentSearchKeywordTextView.visibility = View.GONE
+        binding.noSearchKeywordTextView.visibility = View.GONE
+        binding.searchActivityRecyclerView.visibility = View.VISIBLE
 
+        listItems.clear() // 리스트 초기화
+        for (hospital in searchResult!!.response.body.items.item) {
+            // 결과를 리사이클러 뷰에 추가
+            val item = ListLayout(hospital.yadmNm)
+            listItems.add(item)
+        }
+        listAdapter.notifyDataSetChanged()
     }
+
 
     private fun autoKeyboardShow() {
         //EditText에 포커싱

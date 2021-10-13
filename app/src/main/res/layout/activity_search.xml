@@ -64,6 +64,7 @@
         android:paddingEnd="10dp"
         android:text="현위치 : 사당동"
         android:textSize="12sp"
+        android:visibility="visible"
         app:layout_constraintEnd_toStartOf="@id/visitDayButton"
         app:layout_constraintHorizontal_bias="0.15"
         app:layout_constraintHorizontal_chainStyle="packed"
@@ -81,6 +82,7 @@
         android:paddingEnd="10dp"
         android:text="21/10/11(월)"
         android:textSize="12sp"
+        android:visibility="visible"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@id/hereLocationButton"
         app:layout_constraintTop_toTopOf="@id/hereLocationButton" />
@@ -91,6 +93,7 @@
         android:layout_height="1dp"
         android:layout_marginTop="15dp"
         android:background="@color/gray"
+        android:visibility="visible"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/visitDayButton" />
@@ -104,6 +107,7 @@
         android:text="추천"
         android:textColor="#FF3399"
         android:textSize="14sp"
+        android:visibility="visible"
         app:layout_constraintStart_toStartOf="@id/hereLocationButton"
         app:layout_constraintTop_toBottomOf="@id/searchActivitySecondDivider" />
 
@@ -116,6 +120,7 @@
         android:text="검색어"
         android:textColor="@color/dark_gray"
         android:textSize="14sp"
+        android:visibility="visible"
         app:layout_constraintBottom_toBottomOf="@id/searchActivityRecommendTextView"
         app:layout_constraintStart_toEndOf="@id/searchActivityRecommendTextView"
         app:layout_constraintTop_toTopOf="@id/searchActivityRecommendTextView" />
@@ -131,6 +136,7 @@
         android:paddingEnd="10dp"
         android:text="자궁근종"
         android:textSize="12sp"
+        android:visibility="visible"
         app:layout_constraintEnd_toStartOf="@id/secondRecommendButton"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/searchActivityRecommendTextView" />
@@ -146,6 +152,7 @@
         android:paddingEnd="10dp"
         android:text="호흡기질환"
         android:textSize="12sp"
+        android:visibility="visible"
         app:layout_constraintEnd_toStartOf="@id/thirdRecommendButton"
         app:layout_constraintStart_toEndOf="@id/firstRecommendButton"
         app:layout_constraintTop_toBottomOf="@id/searchActivityRecommendTextView" />
@@ -161,6 +168,7 @@
         android:paddingEnd="10dp"
         android:text="영유아검진"
         android:textSize="12sp"
+        android:visibility="visible"
         app:layout_constraintEnd_toStartOf="@id/fourthRecommendButton"
         app:layout_constraintStart_toEndOf="@id/secondRecommendButton"
         app:layout_constraintTop_toBottomOf="@id/searchActivityRecommendTextView" />
@@ -176,6 +184,7 @@
         android:paddingEnd="10dp"
         android:text="영유아검진"
         android:textSize="12sp"
+        android:visibility="visible"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@id/thirdRecommendButton"
         app:layout_constraintTop_toBottomOf="@id/searchActivityRecommendTextView" />
@@ -191,6 +200,7 @@
         android:paddingEnd="10dp"
         android:text="예방접종"
         android:textSize="12sp"
+        android:visibility="visible"
         app:layout_constraintStart_toStartOf="@id/firstRecommendButton"
         app:layout_constraintTop_toBottomOf="@id/firstRecommendButton" />
 
@@ -203,6 +213,7 @@
         android:text="최근 검색어"
         android:textColor="@color/dark_gray"
         android:textSize="14sp"
+        android:visibility="visible"
         app:layout_constraintStart_toStartOf="@id/hereLocationButton"
         app:layout_constraintTop_toBottomOf="@id/fifthRecommendButton" />
 
@@ -219,5 +230,16 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/recentSearchKeywordTextView"
         tools:visibility="visible" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:visibility="gone"
+        android:id="@+id/searchActivityRecyclerView"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:background="@color/white"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/searchActivityFirstDivider" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
