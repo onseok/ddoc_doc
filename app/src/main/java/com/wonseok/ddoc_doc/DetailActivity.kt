@@ -26,6 +26,7 @@ class DetailActivity : AppCompatActivity() {
             onBackPressed()
         }
 
+        // 전화걸기 기능
         binding.hospitalDetailCallButton.setOnClickListener {
             phoneNum += intent.getStringExtra("telno")
             var intent = Intent(Intent.ACTION_DIAL)
