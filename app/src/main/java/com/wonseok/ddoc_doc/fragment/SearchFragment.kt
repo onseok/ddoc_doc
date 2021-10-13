@@ -70,6 +70,10 @@ class SearchFragment : Fragment() {
 
         binding?.mainSearchButton?.setOnClickListener {
             val intent = Intent(activity, SearchActivity::class.java)
+            val currentPlace = binding?.hereLocationButton?.text.toString()
+            val currentDate = binding?.visitDayButton?.text.toString()
+            intent.putExtra("currentPlace", currentPlace)
+            intent.putExtra("currentDate", currentDate )
             startActivity(intent)
         }
 

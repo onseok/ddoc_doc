@@ -21,14 +21,14 @@
         android:id="@+id/searchActivityEditTextView"
         android:layout_width="0dp"
         android:layout_height="0dp"
-        android:fontFamily="@font/ddoc_doc_font"
-        android:paddingStart="10dp"
-        android:hint="배가 아플 때 '장염'을 검색해보세요."
         android:background="@color/transparent"
-        android:textSize="16sp"
+        android:fontFamily="@font/ddoc_doc_font"
+        android:hint="배가 아플 때 '장염'을 검색해보세요."
         android:inputType="text"
-        app:layout_constraintEnd_toStartOf="@id/searchActivitySearchButton"
+        android:paddingStart="10dp"
+        android:textSize="16sp"
         app:layout_constraintBottom_toBottomOf="@id/searchActivityBackButton"
+        app:layout_constraintEnd_toStartOf="@id/searchActivitySearchButton"
         app:layout_constraintStart_toEndOf="@id/searchActivityBackButton"
         app:layout_constraintTop_toTopOf="@id/searchActivityBackButton" />
 
@@ -42,5 +42,182 @@
         android:src="@drawable/ic_search_activity"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <View
+        android:id="@+id/searchActivityFirstDivider"
+        android:layout_width="0dp"
+        android:layout_height="1dp"
+        android:layout_marginTop="2dp"
+        android:background="@color/gray"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/searchActivityBackButton" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/hereLocationButton"
+        android:layout_width="130dp"
+        android:layout_height="35dp"
+        android:layout_marginTop="15dp"
+        android:background="@drawable/main_custom_small_button"
+        android:drawableStart="@drawable/ic_here_location"
+        android:paddingStart="10dp"
+        android:paddingEnd="10dp"
+        android:text="현위치 : 사당동"
+        android:textSize="12sp"
+        app:layout_constraintEnd_toStartOf="@id/visitDayButton"
+        app:layout_constraintHorizontal_bias="0.15"
+        app:layout_constraintHorizontal_chainStyle="packed"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/searchActivityFirstDivider" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/visitDayButton"
+        android:layout_width="130dp"
+        android:layout_height="35dp"
+        android:layout_marginStart="10dp"
+        android:background="@drawable/main_custom_small_button"
+        android:drawableStart="@drawable/ic_calendar"
+        android:paddingStart="10dp"
+        android:paddingEnd="10dp"
+        android:text="21/10/11(월)"
+        android:textSize="12sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/hereLocationButton"
+        app:layout_constraintTop_toTopOf="@id/hereLocationButton" />
+
+    <View
+        android:id="@+id/searchActivitySecondDivider"
+        android:layout_width="0dp"
+        android:layout_height="1dp"
+        android:layout_marginTop="15dp"
+        android:background="@color/gray"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/visitDayButton" />
+
+    <TextView
+        android:id="@+id/searchActivityRecommendTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+        android:fontFamily="@font/ddoc_doc_font"
+        android:text="추천"
+        android:textColor="#FF3399"
+        android:textSize="14sp"
+        app:layout_constraintStart_toStartOf="@id/hereLocationButton"
+        app:layout_constraintTop_toBottomOf="@id/searchActivitySecondDivider" />
+
+    <TextView
+        android:id="@+id/searchActivityRecommendSubtextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="5dp"
+        android:fontFamily="@font/ddoc_doc_font"
+        android:text="검색어"
+        android:textColor="@color/dark_gray"
+        android:textSize="14sp"
+        app:layout_constraintBottom_toBottomOf="@id/searchActivityRecommendTextView"
+        app:layout_constraintStart_toEndOf="@id/searchActivityRecommendTextView"
+        app:layout_constraintTop_toTopOf="@id/searchActivityRecommendTextView" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/firstRecommendButton"
+        android:layout_width="wrap_content"
+        android:layout_height="25dp"
+        android:layout_marginTop="15dp"
+        android:background="@drawable/main_custom_small_button"
+        android:fontFamily="@font/ddoc_doc_font"
+        android:paddingStart="10dp"
+        android:paddingEnd="10dp"
+        android:text="자궁근종"
+        android:textSize="12sp"
+        app:layout_constraintEnd_toStartOf="@id/secondRecommendButton"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/searchActivityRecommendTextView" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/secondRecommendButton"
+        android:layout_width="wrap_content"
+        android:layout_height="25dp"
+        android:layout_marginTop="15dp"
+        android:background="@drawable/main_custom_small_button"
+        android:fontFamily="@font/ddoc_doc_font"
+        android:paddingStart="10dp"
+        android:paddingEnd="10dp"
+        android:text="호흡기질환"
+        android:textSize="12sp"
+        app:layout_constraintEnd_toStartOf="@id/thirdRecommendButton"
+        app:layout_constraintStart_toEndOf="@id/firstRecommendButton"
+        app:layout_constraintTop_toBottomOf="@id/searchActivityRecommendTextView" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/thirdRecommendButton"
+        android:layout_width="wrap_content"
+        android:layout_height="25dp"
+        android:layout_marginTop="15dp"
+        android:background="@drawable/main_custom_small_button"
+        android:fontFamily="@font/ddoc_doc_font"
+        android:paddingStart="10dp"
+        android:paddingEnd="10dp"
+        android:text="영유아검진"
+        android:textSize="12sp"
+        app:layout_constraintEnd_toStartOf="@id/fourthRecommendButton"
+        app:layout_constraintStart_toEndOf="@id/secondRecommendButton"
+        app:layout_constraintTop_toBottomOf="@id/searchActivityRecommendTextView" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/fourthRecommendButton"
+        android:layout_width="wrap_content"
+        android:layout_height="25dp"
+        android:layout_marginTop="15dp"
+        android:background="@drawable/main_custom_small_button"
+        android:fontFamily="@font/ddoc_doc_font"
+        android:paddingStart="10dp"
+        android:paddingEnd="10dp"
+        android:text="영유아검진"
+        android:textSize="12sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/thirdRecommendButton"
+        app:layout_constraintTop_toBottomOf="@id/searchActivityRecommendTextView" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/fifthRecommendButton"
+        android:layout_width="wrap_content"
+        android:layout_height="25dp"
+        android:layout_marginTop="15dp"
+        android:background="@drawable/main_custom_small_button"
+        android:fontFamily="@font/ddoc_doc_font"
+        android:paddingStart="10dp"
+        android:paddingEnd="10dp"
+        android:text="예방접종"
+        android:textSize="12sp"
+        app:layout_constraintStart_toStartOf="@id/firstRecommendButton"
+        app:layout_constraintTop_toBottomOf="@id/firstRecommendButton" />
+
+    <TextView
+        android:id="@+id/recentSearchKeywordTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="60dp"
+        android:fontFamily="@font/ddoc_doc_font"
+        android:text="최근 검색어"
+        android:textColor="@color/dark_gray"
+        android:textSize="14sp"
+        app:layout_constraintStart_toStartOf="@id/hereLocationButton"
+        app:layout_constraintTop_toBottomOf="@id/fifthRecommendButton" />
+
+    <TextView
+        android:id="@+id/noSearchKeywordTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="40dp"
+        android:fontFamily="@font/ddoc_doc_font"
+        android:text="최근 검색어가 없습니다."
+        android:textSize="13sp"
+        android:visibility="visible"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/recentSearchKeywordTextView"
+        tools:visibility="visible" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
