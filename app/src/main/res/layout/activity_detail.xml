@@ -100,6 +100,29 @@
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/hospitalDetailBackgroundImageView" />
 
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/mainLogoImageView"
+                android:layout_width="35dp"
+                android:layout_height="35dp"
+                android:layout_marginStart="15dp"
+                android:src="@drawable/ic_ddoc_doc_main_logo"
+                android:translationZ="1dp"
+                app:layout_constraintBottom_toBottomOf="@id/hospitalDetailCallButton"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="@id/hospitalDetailCallButton" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="5dp"
+                android:fontFamily="@font/ddoc_doc_font"
+                android:text="접수"
+                android:textSize="14sp"
+                android:translationZ="1dp"
+                app:layout_constraintBottom_toBottomOf="@id/mainLogoImageView"
+                app:layout_constraintStart_toEndOf="@id/mainLogoImageView"
+                app:layout_constraintTop_toTopOf="@id/mainLogoImageView" />
+
             <TextView
                 android:id="@+id/hospitalDetailYearTextView"
                 android:layout_width="wrap_content"
@@ -647,7 +670,7 @@
                 android:layout_width="0dp"
                 android:layout_height="120dp"
                 android:layout_marginStart="15dp"
-                android:layout_marginTop="15dp"
+                android:layout_marginTop="30dp"
                 android:layout_marginEnd="15dp"
                 android:layout_marginBottom="10dp"
                 android:background="@drawable/introduce_service_background"
