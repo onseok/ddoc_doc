@@ -29,6 +29,8 @@ class SearchFragment : Fragment() {
     private var myHandler = MyHandler()
     private val intervalTime = 3500.toLong() // 몇초 간격으로 페이지를 넘길것인지 (3500 = 3.5초)
 
+    private val bottomSheet = ChoosePlaceBottomSheet()
+
 
     // 뷰가 생성되었을 때 - 프레그먼트와 레이아웃을 연결시켜주는 부분
     @RequiresApi(Build.VERSION_CODES.O)
@@ -75,6 +77,10 @@ class SearchFragment : Fragment() {
             intent.putExtra("currentPlace", currentPlace)
             intent.putExtra("currentDate", currentDate )
             startActivity(intent)
+        }
+
+        binding!!.hereLocationButton.setOnClickListener {
+            bottomSheet.show(childFragmentManager, bottomSheet.tag)
         }
 
 
