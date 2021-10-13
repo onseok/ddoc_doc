@@ -232,14 +232,54 @@
         tools:visibility="visible" />
 
     <androidx.recyclerview.widget.RecyclerView
-        android:visibility="gone"
         android:id="@+id/searchActivityRecyclerView"
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:background="@color/white"
+        android:visibility="gone"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/searchActivityFirstDivider" />
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/noneImageView"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:src="@drawable/ic_none_list"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/searchActivityFirstDivider"
+        app:layout_constraintVertical_bias="0.2"
+        tools:visibility="visible" />
+
+    <TextView
+        android:id="@+id/noneFirstTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/ddoc_doc_font"
+        android:text="일치하는 결과가 없어요."
+        android:textSize="14sp"
+        android:visibility="gone"
+        app:layout_constraintEnd_toEndOf="@id/noneImageView"
+        app:layout_constraintStart_toStartOf="@id/noneImageView"
+        app:layout_constraintTop_toBottomOf="@id/noneImageView"
+        tools:visibility="visible" />
+
+    <TextView
+        android:id="@+id/noneSecondTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:fontFamily="@font/ddoc_doc_font"
+        android:text="검색 단어가 정확한지 확인해보세요."
+        android:textSize="14sp"
+        android:visibility="gone"
+        app:layout_constraintEnd_toEndOf="@id/noneImageView"
+        app:layout_constraintStart_toStartOf="@id/noneImageView"
+        app:layout_constraintTop_toBottomOf="@id/noneFirstTextView"
+        tools:visibility="visible" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

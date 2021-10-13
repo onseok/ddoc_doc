@@ -9,14 +9,17 @@
     <uses-permission android:name="android.permission.CALL_PHONE" />
 
     <application
-        android:usesCleartextTraffic="true"
         android:name=".utility.GlobalApplication"
         android:allowBackup="true"
         android:icon="@mipmap/ic_main"
         android:label="똑닥(클론)"
         android:roundIcon="@mipmap/ic_main_round"
         android:supportsRtl="true"
-        android:theme="@style/Theme.Ddoc_doc">
+        android:theme="@style/Theme.Ddoc_doc"
+        android:usesCleartextTraffic="true">
+        <activity
+            android:name=".DetailActivity"
+            android:exported="true" />
         <activity
             android:name=".SearchActivity"
             android:exported="true" />

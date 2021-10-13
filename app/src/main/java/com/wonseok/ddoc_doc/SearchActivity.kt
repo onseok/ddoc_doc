@@ -40,7 +40,7 @@ class SearchActivity : AppCompatActivity() {
     private val listAdapter = HospitalAdapter(listItems)    // 리사이클러 뷰 어댑터
 
     var hospitalName = ""
-    var currentPlace = "사당동"
+    var currentPlace = ""
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -56,35 +56,20 @@ class SearchActivity : AppCompatActivity() {
         initViews()
         initHospitalRecyclerView()
 
-
-//        // 검색 버튼을 누른다면 loadHospitals 메서드 호출
-//        binding.searchActivitySearchButton.setOnClickListener {
-//            hospitalName = binding.searchActivityEditTextView.text.toString()
-//            currentPlace = binding.hereLocationButton.text.substring(6) ?: ""
-//            loadHospitals(currentPlace, hospitalName)
-//        }
-
-//
-//        binding.searchActivityEditTextView.setOnKeyListener { view, i, keyEvent ->
-//            hospitalName = binding.searchActivityEditTextView.text.toString()
-//            currentPlace = binding.hereLocationButton.text.substring(6) ?: ""
-//
-//            if (i == KeyEvent.KEYCODE_ALL_APPS && keyEvent.action == MotionEvent.ACTION_DOWN) {
-//                loadHospitals(currentPlace, hospitalName)
-//                return@setOnKeyListener true
-//            }
-//            return@setOnKeyListener false
-//        }
-
         // 실시간 검색 처리
         binding.searchActivityEditTextView.addTextChangedListener(object : TextWatcher {
             override fun afterTextChanged(p0: Editable?) {
             }
             override fun beforeTextChanged(p0: CharSequence?, p1: Int, p2: Int, p3: Int) {
+                hospitalName = binding.searchActivityEditTextView.text.toString()
+                currentPlace = binding.hereLocationButton.text.substring(6)
+                Log.d("HospitalName", hospitalName)
+                loadHospitals(currentPlace, hospitalName)
             }
             override fun onTextChanged(str: CharSequence?, p1: Int, p2: Int, p3: Int) {
                 hospitalName = binding.searchActivityEditTextView.text.toString()
-                currentPlace = binding.hereLocationButton.text.substring(6) ?: ""
+                currentPlace = binding.hereLocationButton.text.substring(6)
+                Log.d("HospitalName", hospitalName)
                 loadHospitals(currentPlace, hospitalName)
             }
         })
@@ -101,10 +86,22 @@ class SearchActivity : AppCompatActivity() {
         binding.searchActivityRecyclerView.layoutManager =
             LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false)
         binding.searchActivityRecyclerView.adapter = listAdapter
+
+        // 리스트 아이템 클릭 시 해당 정보를 가지고 새로운 액티비티 띄우기
+        listAdapter.setItemClickListener(object: HospitalAdapter.OnItemClickListener {
+            override fun onClick(v: View, position: Int) {
+//                val mapPoint = MapPoint.mapPointWithGeoCoord(listItems[position].y, listItems[position].x)
+//                binding.mapView.setMapCenterPointAndZoomLevel(mapPoint, 1, true)
+
+                val hospitalName = listItems[position].yadmNm
+                val intent = Intent(this@SearchActivity, DetailActivity::class.java)
+                intent.putExtra("hospitalName", hospitalName)
+                startActivity(intent)
+            }
+        })
     }
 
     private fun loadHospitals(currentPlace: String, hospitalName: String) {
-//        var gson = GsonBuilder().setLenient().create()
 
         val retrofit = Retrofit.Builder()
             .baseUrl(HospitalOpenApi.DOMAIN)
@@ -117,7 +114,7 @@ class SearchActivity : AppCompatActivity() {
             .getHospitals(
                 (getString(R.string.hospitalInfoApiKey)),
                 1,
-                10,
+                1000,
                 currentPlace,
                 hospitalName,
                 3000
@@ -130,7 +127,6 @@ class SearchActivity : AppCompatActivity() {
                 }
 
                 override fun onResponse(call: Call<Hospitals>, response: Response<Hospitals>) {
-//                    showHospitals(response.body() as Hospitals)
                     // 통신 성공
                     response.body()?.let {
                         it.response.body.items.item.forEach { hospital ->
@@ -138,8 +134,17 @@ class SearchActivity : AppCompatActivity() {
                         }
                     }
 
-                    // 병원 검색 결과 처리 함수
-                    showHospitalList(response.body())
+                    // 병원 검색어가 있어야지만 병원 검색 결과 처리 (실시간 처리 때문)
+                    if (hospitalName != "") {
+                        // 병원 검색 결과 처리 함수
+                        showList()
+                        showHospitalList(response.body())
+                        Log.d("HideShow", "1")
+                    }
+                    else {
+                        hideList()
+                        Log.d("HideShow", "3")
+                    }
                 }
 
             })
@@ -147,6 +152,18 @@ class SearchActivity : AppCompatActivity() {
     }
 
     private fun showHospitalList(searchResult: Hospitals?) {
+
+
+        listItems.clear() // 리스트 초기화
+        for (hospital in searchResult!!.response.body.items.item) {
+            // 결과를 리사이클러 뷰에 추가
+            val item = ListLayout(hospital.yadmNm)
+            listItems.add(item)
+        }
+        listAdapter.notifyDataSetChanged()
+    }
+
+    private fun showList() {
         binding.hereLocationButton.visibility = View.GONE
         binding.visitDayButton.visibility = View.GONE
         binding.searchActivitySecondDivider.visibility = View.GONE
@@ -160,14 +177,48 @@ class SearchActivity : AppCompatActivity() {
         binding.recentSearchKeywordTextView.visibility = View.GONE
         binding.noSearchKeywordTextView.visibility = View.GONE
         binding.searchActivityRecyclerView.visibility = View.VISIBLE
+        binding.noneImageView.visibility = View.GONE
+        binding.noneFirstTextView.visibility = View.GONE
+        binding.noneSecondTextView.visibility = View.GONE
+    }
 
-        listItems.clear() // 리스트 초기화
-        for (hospital in searchResult!!.response.body.items.item) {
-            // 결과를 리사이클러 뷰에 추가
-            val item = ListLayout(hospital.yadmNm)
-            listItems.add(item)
-        }
-        listAdapter.notifyDataSetChanged()
+    private fun noneList() {
+        binding.hereLocationButton.visibility = View.GONE
+        binding.visitDayButton.visibility = View.GONE
+        binding.searchActivitySecondDivider.visibility = View.GONE
+        binding.searchActivityRecommendTextView.visibility = View.GONE
+        binding.searchActivityRecommendSubtextView.visibility = View.GONE
+        binding.firstRecommendButton.visibility = View.GONE
+        binding.secondRecommendButton.visibility = View.GONE
+        binding.thirdRecommendButton.visibility = View.GONE
+        binding.fourthRecommendButton.visibility = View.GONE
+        binding.fifthRecommendButton.visibility = View.GONE
+        binding.recentSearchKeywordTextView.visibility = View.GONE
+        binding.noSearchKeywordTextView.visibility = View.GONE
+        binding.searchActivityRecyclerView.visibility = View.GONE
+        binding.noneImageView.visibility = View.VISIBLE
+        binding.noneFirstTextView.visibility = View.VISIBLE
+        binding.noneSecondTextView.visibility = View.VISIBLE
+
+    }
+
+    private fun hideList() {
+        binding.hereLocationButton.visibility = View.VISIBLE
+        binding.visitDayButton.visibility = View.VISIBLE
+        binding.searchActivitySecondDivider.visibility = View.VISIBLE
+        binding.searchActivityRecommendTextView.visibility = View.VISIBLE
+        binding.searchActivityRecommendSubtextView.visibility = View.VISIBLE
+        binding.firstRecommendButton.visibility = View.VISIBLE
+        binding.secondRecommendButton.visibility = View.VISIBLE
+        binding.thirdRecommendButton.visibility = View.VISIBLE
+        binding.fourthRecommendButton.visibility = View.VISIBLE
+        binding.fifthRecommendButton.visibility = View.VISIBLE
+        binding.recentSearchKeywordTextView.visibility = View.VISIBLE
+        binding.noSearchKeywordTextView.visibility = View.VISIBLE
+        binding.searchActivityRecyclerView.visibility = View.GONE
+        binding.noneImageView.visibility = View.GONE
+        binding.noneFirstTextView.visibility = View.GONE
+        binding.noneSecondTextView.visibility = View.GONE
     }
 
 
