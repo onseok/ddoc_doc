@@ -6,31 +6,39 @@ import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.wonseok.ddoc_doc.R
 import com.wonseok.ddoc_doc.data.PlaceGu
+import com.wonseok.ddoc_doc.databinding.RecyclerGridItemListBinding
 
 
-class ChoosePlaceAdapter(val itemList: ArrayList<PlaceGu>): RecyclerView.Adapter<ChoosePlaceAdapter.GuItemViewHolder>() {
+class ChoosePlaceAdapter: RecyclerView.Adapter<ChoosePlaceAdapter.GuItemViewHolder>() {
 
-    inner class GuItemViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
-        val guName: TextView = itemView.findViewById(R.id.guTextView)
-    }
+    var listData = mutableListOf<PlaceGu>()
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ChoosePlaceAdapter.GuItemViewHolder {
-        val view = LayoutInflater.from(parent.context).inflate(R.layout.recycler_item_list, parent, false)
-        return GuItemViewHolder(view)
+        val binding = RecyclerGridItemListBinding.inflate(LayoutInflater.from(parent.context), parent, false)
+
+        return GuItemViewHolder(binding)
+    }
+
+    override fun getItemCount(): Int {
+        return listData.size
     }
 
     override fun onBindViewHolder(holder: GuItemViewHolder, position: Int) {
 
-        holder.guName.text = itemList[position].gu
+        val data = listData.get(position)
 
-        // 아이템 클릭 이벤트
-        holder.itemView.setOnClickListener {
-            itemClickListener.onClick(it, position)
-        }
+        holder.setData(data)
+
+//        // 아이템 클릭 이벤트
+//        holder.itemView.setOnClickListener {
+//            itemClickListener.onClick(it, position)
+//        }
     }
 
-    override fun getItemCount(): Int {
-        return itemList.size
+    inner class GuItemViewHolder(val binding: RecyclerGridItemListBinding) : RecyclerView.ViewHolder(binding.root) {
+        fun setData(data: PlaceGu) {
+            binding.guTextView.text = data.gu
+        }
     }
 
     interface OnItemClickListener {
