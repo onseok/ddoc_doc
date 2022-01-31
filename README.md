@@ -4,7 +4,7 @@
 
 # 사용 API
 - [Naver Map API](https://www.ncloud.com/product/applicationService/maps)
-- Kakao Login API
+- [Kakao Login API](https://developers.kakao.com/docs/latest/ko/kakaologin/rest-api)
 - 건강보험심사평가원_병원정보서비스 API
 
 # 스크린샷
