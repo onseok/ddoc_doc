@@ -5,7 +5,7 @@
 # 사용 API
 - [Naver Map API](https://www.ncloud.com/product/applicationService/maps)
 - [Kakao Login API](https://developers.kakao.com/docs/latest/ko/kakaologin/rest-api)
-- 건강보험심사평가원_병원정보서비스 API
+- [건강보험심사평가원_병원정보서비스 API](https://www.data.go.kr/data/15001698/openapi.do)
 
 # 스크린샷
 ![똑닥1](https://user-images.githubusercontent.com/76798309/151745096-42430ceb-e395-4729-ba90-4ef018349e4f.jpg)
