@@ -3,7 +3,7 @@
 병원 예약/접수 및 약국찾기 서비스를 제공하는 '똑닥' 서비스
 
 # 사용 API
-- Naver Map API
+- Naver Map API(https://www.ncloud.com/product/applicationService/maps)
 - Kakao Login API
 - 건강보험심사평가원_병원정보서비스 API
 
